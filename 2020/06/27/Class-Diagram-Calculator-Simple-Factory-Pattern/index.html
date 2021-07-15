@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json>
+    <meta charset="utf-8" />
+
+    
+
+
+
+
+<link rel="apple-touch-icon" sizes="512x512" href="/image/icons/512x512.png">
+
+<link rel="apple-touch-icon" sizes="192x192" href="/image/icons/192x192.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/image/icons/180x180.png">
+
+<link rel="apple-touch-icon" sizes="144x144" href="/image/icons/white-bg/144x144.png">
+
+<link rel="apple-touch-icon" sizes="128x128" href="/image/icons/white-bg/128x128.png">
+
+<link rel="apple-touch-icon" sizes="96x96" href="/image/icons/white-bg/96x96.png">
+
+<link rel="apple-touch-icon" sizes="48x48" href="/image/icons/white-bg/48x48.png">
+
+<meta name="msapplication-TileColor" content="#006bde" />
+
+<!-- <meta name="theme-color" content="#006bde" /> -->
+<meta name="theme-color" content="#202124" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="YNCBearz" />
+
+
+    
+    <title>類別圖：計算機（簡單工廠模式） | YNCBearz</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Class Diagram" />
+    
+    <meta name="description" content="Class Diagram:Calculator (Simple Factory Pattern)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="類別圖：計算機（簡單工廠模式）">
+<meta property="og:url" content="https://yncbearz.github.io/2020/06/27/Class-Diagram-Calculator-Simple-Factory-Pattern/index.html">
+<meta property="og:site_name" content="YNCBearz">
+<meta property="og:description" content="Class Diagram:Calculator (Simple Factory Pattern)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yncbearz.github.io/image/world-map.jpeg">
+<meta property="article:published_time" content="2020-06-27T03:44:52.000Z">
+<meta property="article:modified_time" content="2020-07-26T12:13:03.412Z">
+<meta property="article:author" content="YNCBearz">
+<meta property="article:tag" content="Class Diagram">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yncbearz.github.io/image/world-map.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/image/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-167983291-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Clean-Code/">Clean Code</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Design-Pattern/">Design Pattern</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Design-Pattern/">Design Pattern</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Class-Diagram-Calculator-Simple-Factory-Pattern"
+    class="article article-single article-type-post"
+    itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        類別圖：計算機（簡單工廠模式）
+        </h1>
+    
+
+        </header>
+        
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/06/27/Class-Diagram-Calculator-Simple-Factory-Pattern/" class="article-date">
+         <time datetime="2020-06-27T03:44:52.000Z" itemprop="datePublished">2020-06-27</time>
+      </a>
+    </div>
+
+
+            
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a>
+    </div>
+
+            
+
+            
+
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>Example: <a href="/2020/06/21/Example-Calculator-Simple-Factory-Pattern/" title="計算機">計算機</a></p>
+<hr>
+<img src="data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20contentScriptType%3D%22application%2Fecmascript%22%20contentStyleType%3D%22text%2Fcss%22%20height%3D%22202px%22%20preserveAspectRatio%3D%22none%22%20style%3D%22width%3A712px%3Bheight%3A202px%3Bbackground%3A%23FFFFFF%3B%22%20version%3D%221.1%22%20viewBox%3D%220%200%20712%20202%22%20width%3D%22712px%22%20zoomAndPan%3D%22magnify%22%3E%3Cdefs%3E%3Cfilter%20height%3D%22300%25%22%20id%3D%22f844jssmcei33%22%20width%3D%22300%25%22%20x%3D%22-1%22%20y%3D%22-1%22%3E%3CfeGaussianBlur%20result%3D%22blurOut%22%20stdDeviation%3D%222.0%22%2F%3E%3CfeColorMatrix%20in%3D%22blurOut%22%20result%3D%22blurOut2%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20.4%200%22%2F%3E%3CfeOffset%20dx%3D%224.0%22%20dy%3D%224.0%22%20in%3D%22blurOut2%22%20result%3D%22blurOut3%22%2F%3E%3CfeBlend%20in%3D%22SourceGraphic%22%20in2%3D%22blurOut3%22%20mode%3D%22normal%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%3E%3C!--MD5%3D%5B175f95e045c1a44aed0b30df3abe0e5c%5D%0Aclass%20Program--%3E%3Crect%20codeLine%3D%221%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22Program%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%2282%22%20x%3D%227%22%20y%3D%227%22%2F%3E%3Cellipse%20cx%3D%2222%22%20cy%3D%2223%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M24.3438%2C18.6719%20C23.4063%2C18.2344%2022.8125%2C18.0938%2021.9375%2C18.0938%20C19.3125%2C18.0938%2017.3125%2C20.1719%2017.3125%2C22.8906%20L17.3125%2C24.0156%20C17.3125%2C26.5938%2019.4219%2C28.4844%2022.3125%2C28.4844%20C23.5313%2C28.4844%2024.6875%2C28.1875%2025.4375%2C27.6406%20C26.0156%2C27.2344%2026.3438%2C26.7813%2026.3438%2C26.3906%20C26.3438%2C25.9375%2025.9531%2C25.5469%2025.4844%2C25.5469%20C25.2656%2C25.5469%2025.0625%2C25.625%2024.875%2C25.8125%20C24.4219%2C26.2969%2024.4219%2C26.2969%2024.2344%2C26.3906%20C23.8125%2C26.6563%2023.125%2C26.7813%2022.3594%2C26.7813%20C20.3125%2C26.7813%2019.0156%2C25.6875%2019.0156%2C23.9844%20L19.0156%2C22.8906%20C19.0156%2C21.1094%2020.2656%2C19.7969%2022%2C19.7969%20C22.5781%2C19.7969%2023.1875%2C19.9531%2023.6563%2C20.2031%20C24.1406%2C20.4844%2024.3125%2C20.7031%2024.4063%2C21.1094%20C24.4688%2C21.5156%2024.5%2C21.6406%2024.6406%2C21.7656%20C24.7813%2C21.9063%2025.0156%2C22.0156%2025.2344%2C22.0156%20C25.5%2C22.0156%2025.7656%2C21.875%2025.9375%2C21.6563%20C26.0469%2C21.5%2026.0781%2C21.3125%2026.0781%2C20.8906%20L26.0781%2C19.4688%20C26.0781%2C19.0313%2026.0625%2C18.9063%2025.9688%2C18.75%20C25.8125%2C18.4844%2025.5313%2C18.3438%2025.2344%2C18.3438%20C24.9375%2C18.3438%2024.7344%2C18.4375%2024.5156%2C18.75%20L24.3438%2C18.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2250%22%20x%3D%2236%22%20y%3D%2227.1543%22%3EProgram%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%228%22%20x2%3D%2288%22%20y1%3D%2239%22%20y2%3D%2239%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%228%22%20x2%3D%2288%22%20y1%3D%2247%22%20y2%3D%2247%22%2F%3E%3Cellipse%20cx%3D%2218%22%20cy%3D%2258%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2226%22%20x%3D%2227%22%20y%3D%2261.2104%22%3Erun()%3C%2Ftext%3E%3C!--MD5%3D%5Bcfa71f25750102cd5b12d3661345233b%5D%0Aclass%20SimpleOperationFactory--%3E%3Crect%20codeLine%3D%226%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22SimpleOperationFactory%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22178%22%20x%3D%22124%22%20y%3D%227%22%2F%3E%3Cellipse%20cx%3D%22139%22%20cy%3D%2223%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M141.3438%2C18.6719%20C140.4063%2C18.2344%20139.8125%2C18.0938%20138.9375%2C18.0938%20C136.3125%2C18.0938%20134.3125%2C20.1719%20134.3125%2C22.8906%20L134.3125%2C24.0156%20C134.3125%2C26.5938%20136.4219%2C28.4844%20139.3125%2C28.4844%20C140.5313%2C28.4844%20141.6875%2C28.1875%20142.4375%2C27.6406%20C143.0156%2C27.2344%20143.3438%2C26.7813%20143.3438%2C26.3906%20C143.3438%2C25.9375%20142.9531%2C25.5469%20142.4844%2C25.5469%20C142.2656%2C25.5469%20142.0625%2C25.625%20141.875%2C25.8125%20C141.4219%2C26.2969%20141.4219%2C26.2969%20141.2344%2C26.3906%20C140.8125%2C26.6563%20140.125%2C26.7813%20139.3594%2C26.7813%20C137.3125%2C26.7813%20136.0156%2C25.6875%20136.0156%2C23.9844%20L136.0156%2C22.8906%20C136.0156%2C21.1094%20137.2656%2C19.7969%20139%2C19.7969%20C139.5781%2C19.7969%20140.1875%2C19.9531%20140.6563%2C20.2031%20C141.1406%2C20.4844%20141.3125%2C20.7031%20141.4063%2C21.1094%20C141.4688%2C21.5156%20141.5%2C21.6406%20141.6406%2C21.7656%20C141.7813%2C21.9063%20142.0156%2C22.0156%20142.2344%2C22.0156%20C142.5%2C22.0156%20142.7656%2C21.875%20142.9375%2C21.6563%20C143.0469%2C21.5%20143.0781%2C21.3125%20143.0781%2C20.8906%20L143.0781%2C19.4688%20C143.0781%2C19.0313%20143.0625%2C18.9063%20142.9688%2C18.75%20C142.8125%2C18.4844%20142.5313%2C18.3438%20142.2344%2C18.3438%20C141.9375%2C18.3438%20141.7344%2C18.4375%20141.5156%2C18.75%20L141.3438%2C18.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22146%22%20x%3D%22153%22%20y%3D%2227.1543%22%3ESimpleOperationFactory%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22125%22%20x2%3D%22301%22%20y1%3D%2239%22%20y2%3D%2239%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22125%22%20x2%3D%22301%22%20y1%3D%2247%22%20y2%3D%2247%22%2F%3E%3Cellipse%20cx%3D%22135%22%20cy%3D%2258%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22109%22%20x%3D%22144%22%20y%3D%2261.2104%22%3Ecreate()%20%3A%20Operable%3C%2Ftext%3E%3C!--MD5%3D%5B51fc5547b4d6efe0e5f3cd000b80f429%5D%0Aclass%20Operable--%3E%3Crect%20codeLine%3D%2211%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22Operable%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%2286%22%20x%3D%22337%22%20y%3D%227%22%2F%3E%3Cellipse%20cx%3D%22352%22%20cy%3D%2223%22%20fill%3D%22%23B4A7E5%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M352.9531%2C19.7813%20L354.6719%2C19.7813%20C355.0625%2C19.7813%20355.25%2C19.75%20355.375%2C19.6719%20C355.6406%2C19.5156%20355.7813%2C19.2344%20355.7813%2C18.9375%20C355.7813%2C18.6719%20355.6719%2C18.4063%20355.4375%2C18.2344%20C355.2656%2C18.125%20355.125%2C18.0938%20354.6719%2C18.0938%20L349.5313%2C18.0938%20C349.0938%2C18.0938%20348.9688%2C18.1094%20348.8125%2C18.2031%20C348.5625%2C18.3594%20348.4063%2C18.6563%20348.4063%2C18.9375%20C348.4063%2C19.2188%20348.5469%2C19.4688%20348.7656%2C19.6406%20C348.9219%2C19.75%20349.1094%2C19.7813%20349.5313%2C19.7813%20L351.25%2C19.7813%20L351.25%2C26.2969%20L349.5313%2C26.2969%20C349.0938%2C26.2969%20348.9688%2C26.3125%20348.8125%2C26.4219%20C348.5625%2C26.5781%20348.4063%2C26.8594%20348.4063%2C27.1563%20C348.4063%2C27.4063%20348.5469%2C27.6719%20348.7656%2C27.8281%20C348.9219%2C27.9531%20349.125%2C28%20349.5313%2C28%20L354.6719%2C28%20C355.4219%2C28%20355.7813%2C27.7188%20355.7813%2C27.1563%20C355.7813%2C26.875%20355.6719%2C26.625%20355.4375%2C26.4531%20C355.2656%2C26.3281%20355.125%2C26.2969%20354.6719%2C26.2969%20L352.9531%2C26.2969%20L352.9531%2C19.7813%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20font-style%3D%22italic%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2254%22%20x%3D%22366%22%20y%3D%2227.1543%22%3EOperable%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22338%22%20x2%3D%22422%22%20y1%3D%2239%22%20y2%3D%2239%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22338%22%20x2%3D%22422%22%20y1%3D%2247%22%20y2%3D%2247%22%2F%3E%3Cellipse%20cx%3D%22348%22%20cy%3D%2258%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2256%22%20x%3D%22357%22%20y%3D%2261.2104%22%3Eexecute()%3C%2Ftext%3E%3C!--MD5%3D%5Ba17ced79a4d94a7cbea4bd0761d8cdae%5D%0Aclass%20AddOperation--%3E%3Crect%20codeLine%3D%2216%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22AddOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22116%22%20x%3D%2284%22%20y%3D%22128%22%2F%3E%3Cellipse%20cx%3D%2299%22%20cy%3D%22144%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M101.3438%2C139.6719%20C100.4063%2C139.2344%2099.8125%2C139.0938%2098.9375%2C139.0938%20C96.3125%2C139.0938%2094.3125%2C141.1719%2094.3125%2C143.8906%20L94.3125%2C145.0156%20C94.3125%2C147.5938%2096.4219%2C149.4844%2099.3125%2C149.4844%20C100.5313%2C149.4844%20101.6875%2C149.1875%20102.4375%2C148.6406%20C103.0156%2C148.2344%20103.3438%2C147.7813%20103.3438%2C147.3906%20C103.3438%2C146.9375%20102.9531%2C146.5469%20102.4844%2C146.5469%20C102.2656%2C146.5469%20102.0625%2C146.625%20101.875%2C146.8125%20C101.4219%2C147.2969%20101.4219%2C147.2969%20101.2344%2C147.3906%20C100.8125%2C147.6563%20100.125%2C147.7813%2099.3594%2C147.7813%20C97.3125%2C147.7813%2096.0156%2C146.6875%2096.0156%2C144.9844%20L96.0156%2C143.8906%20C96.0156%2C142.1094%2097.2656%2C140.7969%2099%2C140.7969%20C99.5781%2C140.7969%20100.1875%2C140.9531%20100.6563%2C141.2031%20C101.1406%2C141.4844%20101.3125%2C141.7031%20101.4063%2C142.1094%20C101.4688%2C142.5156%20101.5%2C142.6406%20101.6406%2C142.7656%20C101.7813%2C142.9063%20102.0156%2C143.0156%20102.2344%2C143.0156%20C102.5%2C143.0156%20102.7656%2C142.875%20102.9375%2C142.6563%20C103.0469%2C142.5%20103.0781%2C142.3125%20103.0781%2C141.8906%20L103.0781%2C140.4688%20C103.0781%2C140.0313%20103.0625%2C139.9063%20102.9688%2C139.75%20C102.8125%2C139.4844%20102.5313%2C139.3438%20102.2344%2C139.3438%20C101.9375%2C139.3438%20101.7344%2C139.4375%20101.5156%2C139.75%20L101.3438%2C139.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2284%22%20x%3D%22113%22%20y%3D%22148.1543%22%3EAddOperation%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%2285%22%20x2%3D%22199%22%20y1%3D%22160%22%20y2%3D%22160%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%2285%22%20x2%3D%22199%22%20y1%3D%22168%22%20y2%3D%22168%22%2F%3E%3Cellipse%20cx%3D%2295%22%20cy%3D%22179%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2256%22%20x%3D%22104%22%20y%3D%22182.2104%22%3Eexecute()%3C%2Ftext%3E%3C!--MD5%3D%5B7229b028574b4f89919fdfb71991ae06%5D%0Aclass%20MinusOperation--%3E%3Crect%20codeLine%3D%2221%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22MinusOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22126%22%20x%3D%22235%22%20y%3D%22128%22%2F%3E%3Cellipse%20cx%3D%22250%22%20cy%3D%22144%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M252.3438%2C139.6719%20C251.4063%2C139.2344%20250.8125%2C139.0938%20249.9375%2C139.0938%20C247.3125%2C139.0938%20245.3125%2C141.1719%20245.3125%2C143.8906%20L245.3125%2C145.0156%20C245.3125%2C147.5938%20247.4219%2C149.4844%20250.3125%2C149.4844%20C251.5313%2C149.4844%20252.6875%2C149.1875%20253.4375%2C148.6406%20C254.0156%2C148.2344%20254.3438%2C147.7813%20254.3438%2C147.3906%20C254.3438%2C146.9375%20253.9531%2C146.5469%20253.4844%2C146.5469%20C253.2656%2C146.5469%20253.0625%2C146.625%20252.875%2C146.8125%20C252.4219%2C147.2969%20252.4219%2C147.2969%20252.2344%2C147.3906%20C251.8125%2C147.6563%20251.125%2C147.7813%20250.3594%2C147.7813%20C248.3125%2C147.7813%20247.0156%2C146.6875%20247.0156%2C144.9844%20L247.0156%2C143.8906%20C247.0156%2C142.1094%20248.2656%2C140.7969%20250%2C140.7969%20C250.5781%2C140.7969%20251.1875%2C140.9531%20251.6563%2C141.2031%20C252.1406%2C141.4844%20252.3125%2C141.7031%20252.4063%2C142.1094%20C252.4688%2C142.5156%20252.5%2C142.6406%20252.6406%2C142.7656%20C252.7813%2C142.9063%20253.0156%2C143.0156%20253.2344%2C143.0156%20C253.5%2C143.0156%20253.7656%2C142.875%20253.9375%2C142.6563%20C254.0469%2C142.5%20254.0781%2C142.3125%20254.0781%2C141.8906%20L254.0781%2C140.4688%20C254.0781%2C140.0313%20254.0625%2C139.9063%20253.9688%2C139.75%20C253.8125%2C139.4844%20253.5313%2C139.3438%20253.2344%2C139.3438%20C252.9375%2C139.3438%20252.7344%2C139.4375%20252.5156%2C139.75%20L252.3438%2C139.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2294%22%20x%3D%22264%22%20y%3D%22148.1543%22%3EMinusOperation%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22236%22%20x2%3D%22360%22%20y1%3D%22160%22%20y2%3D%22160%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22236%22%20x2%3D%22360%22%20y1%3D%22168%22%20y2%3D%22168%22%2F%3E%3Cellipse%20cx%3D%22246%22%20cy%3D%22179%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2256%22%20x%3D%22255%22%20y%3D%22182.2104%22%3Eexecute()%3C%2Ftext%3E%3C!--MD5%3D%5B636d334129e57d8c8421c0f4c1f759ce%5D%0Aclass%20DivideOperation--%3E%3Crect%20codeLine%3D%2226%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22DivideOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22130%22%20x%3D%22396%22%20y%3D%22128%22%2F%3E%3Cellipse%20cx%3D%22411%22%20cy%3D%22144%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M413.3438%2C139.6719%20C412.4063%2C139.2344%20411.8125%2C139.0938%20410.9375%2C139.0938%20C408.3125%2C139.0938%20406.3125%2C141.1719%20406.3125%2C143.8906%20L406.3125%2C145.0156%20C406.3125%2C147.5938%20408.4219%2C149.4844%20411.3125%2C149.4844%20C412.5313%2C149.4844%20413.6875%2C149.1875%20414.4375%2C148.6406%20C415.0156%2C148.2344%20415.3438%2C147.7813%20415.3438%2C147.3906%20C415.3438%2C146.9375%20414.9531%2C146.5469%20414.4844%2C146.5469%20C414.2656%2C146.5469%20414.0625%2C146.625%20413.875%2C146.8125%20C413.4219%2C147.2969%20413.4219%2C147.2969%20413.2344%2C147.3906%20C412.8125%2C147.6563%20412.125%2C147.7813%20411.3594%2C147.7813%20C409.3125%2C147.7813%20408.0156%2C146.6875%20408.0156%2C144.9844%20L408.0156%2C143.8906%20C408.0156%2C142.1094%20409.2656%2C140.7969%20411%2C140.7969%20C411.5781%2C140.7969%20412.1875%2C140.9531%20412.6563%2C141.2031%20C413.1406%2C141.4844%20413.3125%2C141.7031%20413.4063%2C142.1094%20C413.4688%2C142.5156%20413.5%2C142.6406%20413.6406%2C142.7656%20C413.7813%2C142.9063%20414.0156%2C143.0156%20414.2344%2C143.0156%20C414.5%2C143.0156%20414.7656%2C142.875%20414.9375%2C142.6563%20C415.0469%2C142.5%20415.0781%2C142.3125%20415.0781%2C141.8906%20L415.0781%2C140.4688%20C415.0781%2C140.0313%20415.0625%2C139.9063%20414.9688%2C139.75%20C414.8125%2C139.4844%20414.5313%2C139.3438%20414.2344%2C139.3438%20C413.9375%2C139.3438%20413.7344%2C139.4375%20413.5156%2C139.75%20L413.3438%2C139.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2298%22%20x%3D%22425%22%20y%3D%22148.1543%22%3EDivideOperation%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22397%22%20x2%3D%22525%22%20y1%3D%22160%22%20y2%3D%22160%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22397%22%20x2%3D%22525%22%20y1%3D%22168%22%20y2%3D%22168%22%2F%3E%3Cellipse%20cx%3D%22407%22%20cy%3D%22179%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2256%22%20x%3D%22416%22%20y%3D%22182.2104%22%3Eexecute()%3C%2Ftext%3E%3C!--MD5%3D%5B8e9938396b54ba241b10a98eb1e52f86%5D%0Aclass%20MultiplyOperation--%3E%3Crect%20codeLine%3D%2231%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f844jssmcei33)%22%20height%3D%2260.8047%22%20id%3D%22MultiplyOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22137%22%20x%3D%22561.5%22%20y%3D%22128%22%2F%3E%3Cellipse%20cx%3D%22576.5%22%20cy%3D%22144%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M578.8438%2C139.6719%20C577.9063%2C139.2344%20577.3125%2C139.0938%20576.4375%2C139.0938%20C573.8125%2C139.0938%20571.8125%2C141.1719%20571.8125%2C143.8906%20L571.8125%2C145.0156%20C571.8125%2C147.5938%20573.9219%2C149.4844%20576.8125%2C149.4844%20C578.0313%2C149.4844%20579.1875%2C149.1875%20579.9375%2C148.6406%20C580.5156%2C148.2344%20580.8438%2C147.7813%20580.8438%2C147.3906%20C580.8438%2C146.9375%20580.4531%2C146.5469%20579.9844%2C146.5469%20C579.7656%2C146.5469%20579.5625%2C146.625%20579.375%2C146.8125%20C578.9219%2C147.2969%20578.9219%2C147.2969%20578.7344%2C147.3906%20C578.3125%2C147.6563%20577.625%2C147.7813%20576.8594%2C147.7813%20C574.8125%2C147.7813%20573.5156%2C146.6875%20573.5156%2C144.9844%20L573.5156%2C143.8906%20C573.5156%2C142.1094%20574.7656%2C140.7969%20576.5%2C140.7969%20C577.0781%2C140.7969%20577.6875%2C140.9531%20578.1563%2C141.2031%20C578.6406%2C141.4844%20578.8125%2C141.7031%20578.9063%2C142.1094%20C578.9688%2C142.5156%20579%2C142.6406%20579.1406%2C142.7656%20C579.2813%2C142.9063%20579.5156%2C143.0156%20579.7344%2C143.0156%20C580%2C143.0156%20580.2656%2C142.875%20580.4375%2C142.6563%20C580.5469%2C142.5%20580.5781%2C142.3125%20580.5781%2C141.8906%20L580.5781%2C140.4688%20C580.5781%2C140.0313%20580.5625%2C139.9063%20580.4688%2C139.75%20C580.3125%2C139.4844%20580.0313%2C139.3438%20579.7344%2C139.3438%20C579.4375%2C139.3438%20579.2344%2C139.4375%20579.0156%2C139.75%20L578.8438%2C139.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22105%22%20x%3D%22590.5%22%20y%3D%22148.1543%22%3EMultiplyOperation%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22562.5%22%20x2%3D%22697.5%22%20y1%3D%22160%22%20y2%3D%22160%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22562.5%22%20x2%3D%22697.5%22%20y1%3D%22168%22%20y2%3D%22168%22%2F%3E%3Cellipse%20cx%3D%22572.5%22%20cy%3D%22179%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2256%22%20x%3D%22581.5%22%20y%3D%22182.2104%22%3Eexecute()%3C%2Ftext%3E%3C!--MD5%3D%5B1fcf18e038ad2a92b19b1042fff799fa%5D%0Areverse%20link%20Operable%20to%20AddOperation--%3E%3Cpath%20codeLine%3D%2235%22%20d%3D%22M319.005%2C68.997%20C282.389%2C87.305%20236.074%2C110.463%20200.005%2C128.4975%20%22%20fill%3D%22none%22%20id%3D%22Operable-backto-AddOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3Bstroke-dasharray%3A7.0%2C7.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22315.881%2C62.733%2C336.9%2C60.05%2C322.142%2C75.255%2C315.881%2C62.733%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bf72235cdee4e248daca70297f3b4cc4e%5D%0Areverse%20link%20Operable%20to%20MinusOperation--%3E%3Cpath%20codeLine%3D%2236%22%20d%3D%22M347.963%2C84.993%20C338.054%2C99.3734%20327.41%2C114.8196%20318.504%2C127.7447%20%22%20fill%3D%22none%22%20id%3D%22Operable-backto-MinusOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3Bstroke-dasharray%3A7.0%2C7.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22342.407%2C80.719%2C359.519%2C68.222%2C353.935%2C88.662%2C342.407%2C80.719%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5B3ca98acef0737341c1e92324830a891f%5D%0Areverse%20link%20Operable%20to%20DivideOperation--%3E%3Cpath%20codeLine%3D%2237%22%20d%3D%22M411.646%2C84.993%20C421.435%2C99.3734%20431.949%2C114.8196%20440.746%2C127.7447%20%22%20fill%3D%22none%22%20id%3D%22Operable-backto-DivideOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3Bstroke-dasharray%3A7.0%2C7.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22405.698%2C88.694%2C400.231%2C68.222%2C417.271%2C80.816%2C405.698%2C88.694%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bf308700535784507b9a9df99234056d9%5D%0Areverse%20link%20Operable%20to%20MultiplyOperation--%3E%3Cpath%20codeLine%3D%2238%22%20d%3D%22M441.401%2C67.727%20C479.774%2C85.993%20529.048%2C109.4471%20567.608%2C127.8013%20%22%20fill%3D%22none%22%20id%3D%22Operable-backto-MultiplyOperation%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3Bstroke-dasharray%3A7.0%2C7.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22438.311%2C74.009%2C423.261%2C59.092%2C444.328%2C61.368%2C438.311%2C74.009%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5B653b1d834f74557dac9d47cef1b13549%5D%0Alink%20Program%20to%20SimpleOperationFactory--%3E%3Cpath%20codeLine%3D%2240%22%20d%3D%22M89.25%2C37.5%20C98.9922%2C37.5%20108.734%2C37.5%20118.477%2C37.5%20%22%20fill%3D%22none%22%20id%3D%22Program-to-SimpleOperationFactory%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22123.571%2C37.5%2C114.571%2C33.5%2C118.571%2C37.5%2C114.571%2C41.5%2C123.571%2C37.5%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bf96cf39e43e92dcfea603af6a0ad980d%5D%0Alink%20SimpleOperationFactory%20to%20Operable--%3E%3Cpath%20codeLine%3D%2241%22%20d%3D%22M302.045%2C37.5%20C311.899%2C37.5%20321.753%2C37.5%20331.606%2C37.5%20%22%20fill%3D%22none%22%20id%3D%22SimpleOperationFactory-to-Operable%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22336.759%2C37.5%2C327.759%2C33.5%2C331.759%2C37.5%2C327.759%2C41.5%2C336.759%2C37.5%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Be9f2d418ea938d5e3a201eeda178f47e%5D%0A%40startuml%0D%0Aclass%20Program%0D%0A%7B%0D%0A%20%20%2B%20run()%0D%0A%7D%0D%0A%0D%0Aclass%20SimpleOperationFactory%0D%0A%7B%0D%0A%20%20%2B%20create()%20%3A%20Operable%0D%0A%7D%0D%0A%0D%0Ainterface%20Operable%0D%0A%7B%0D%0A%20%20%2B%20execute()%0D%0A%7D%0D%0A%0D%0Aclass%20AddOperation%0D%0A%7B%0D%0A%20%20%2B%20execute()%0D%0A%7D%0D%0A%0D%0Aclass%20MinusOperation%0D%0A%7B%0D%0A%20%20%2B%20execute()%0D%0A%7D%0D%0A%0D%0Aclass%20DivideOperation%0D%0A%7B%0D%0A%20%20%2B%20execute()%0D%0A%7D%0D%0A%0D%0Aclass%20MultiplyOperation%0D%0A%7B%0D%0A%20%20%2B%20execute()%0D%0A%7D%0D%0AOperable%20%3C%7C..%20AddOperation%0D%0AOperable%20%3C%7C..%20MinusOperation%0D%0AOperable%20%3C%7C..%20DivideOperation%0D%0AOperable%20%3C%7C..%20MultiplyOperation%0D%0A%0D%0AProgram%20-%3E%20SimpleOperationFactory%0D%0ASimpleOperationFactory%20-%3E%20Operable%0D%0A%40enduml%0D%0A%0APlantUML%20version%201.2021.9beta2(Unknown%20compile%20time)%0A(GPL%20source%20distribution)%0AJava%20Runtime%3A%20Java(TM)%20SE%20Runtime%20Environment%0AJVM%3A%20Java%20HotSpot(TM)%2064-Bit%20Server%20VM%0ADefault%20Encoding%3A%20UTF-8%0ALanguage%3A%20en%0ACountry%3A%20US%0A--%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+
+
+<br>
+
+<p>ʕ •ᴥ•ʔ：若不熟悉 UML 類別圖，可參考<a href="/2020/06/26/Class-Diagram-Description/" title="UML類別圖說明">UML類別圖說明</a>。</p>
+
+        </div>
+        <footer class="article-footer">
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "YNCBearz"
+        },
+        "headline": "類別圖：計算機（簡單工廠模式）",
+        "image": "https://yncbearz.github.io/image/world-map.jpeg",
+        "keywords": "Class Diagram",
+        "genre": "Design Pattern",
+        "datePublished": "2020-06-27",
+        "dateCreated": "2020-06-27",
+        "dateModified": "2020-07-26",
+        "url": "https://yncbearz.github.io/2020/06/27/Class-Diagram-Calculator-Simple-Factory-Pattern/",
+        "description": "Class Diagram:Calculator (Simple Factory Pattern)",
+        "wordCount": 10
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/YNCBearz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com/channel/UClWx47-swj-zud4t8i8E-AA/featured" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="paper-plane" href="mailto:yncbearz@gmail.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-paper-plane"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/07/05/Strategy-Pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            策略模式
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/06/26/Class-Diagram-Description/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">UML類別圖說明</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/seo.jpeg)" alt="107.binary-tree-level-order-traversal-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="title">107.binary-tree-level-order-traversal-ii</a></p>
+                            <p class="item-date"><time datetime="2021-04-22T15:55:42.000Z" itemprop="datePublished">2021-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/11/101-symmetric-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/landscape-paris.jpeg)" alt="101.symmetric-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/11/101-symmetric-tree/" class="title">101.symmetric-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-11T15:31:42.000Z" itemprop="datePublished">2021-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/10/100-same-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/green-tree.jpeg)" alt="100.same-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/10/100-same-tree/" class="title">100.same-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-10T09:18:39.000Z" itemprop="datePublished">2021-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/circular-staircase.jpeg)" alt="95.unique-binary-search-trees-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="title">95.unique-binary-search-trees-ii</a></p>
+                            <p class="item-date"><time datetime="2021-01-22T13:46:43.000Z" itemprop="datePublished">2021-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/14/96-unique-binary-search-trees/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/think-outside-of-the-box.jpeg)" alt="96.unique-binary-search-trees" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/14/96-unique-binary-search-trees/" class="title">96.unique-binary-search-trees</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T15:23:38.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Example/" rel="tag">Example</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Menu/" rel="tag">Menu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/" rel="tag">Note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Principle/" rel="tag">Principle</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/S-O-L-I-D/" rel="tag">S.O.L.I.D</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <!-- <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a> -->
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 YNCBearz</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a
+                        href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+                
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '9bacc98e5d3163bf3752',
+        clientSecret: '567948f000fe871abb4c05f3779b09f1821e759b',
+        id: '8edd1ca914907adf6ca3cb0ddeedc682',
+        repo: 'yncbearz.github.io',
+        owner: 'YNCBearz',
+        admin: "YNCBearz"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1626319491531')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>

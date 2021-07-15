@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json>
+    <meta charset="utf-8" />
+
+    
+
+
+
+
+<link rel="apple-touch-icon" sizes="512x512" href="/image/icons/512x512.png">
+
+<link rel="apple-touch-icon" sizes="192x192" href="/image/icons/192x192.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/image/icons/180x180.png">
+
+<link rel="apple-touch-icon" sizes="144x144" href="/image/icons/white-bg/144x144.png">
+
+<link rel="apple-touch-icon" sizes="128x128" href="/image/icons/white-bg/128x128.png">
+
+<link rel="apple-touch-icon" sizes="96x96" href="/image/icons/white-bg/96x96.png">
+
+<link rel="apple-touch-icon" sizes="48x48" href="/image/icons/white-bg/48x48.png">
+
+<meta name="msapplication-TileColor" content="#006bde" />
+
+<!-- <meta name="theme-color" content="#006bde" /> -->
+<meta name="theme-color" content="#202124" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="YNCBearz" />
+
+
+    
+    <title>類別圖：假期規劃 （建造者模式） | YNCBearz</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Class Diagram" />
+    
+    <meta name="description" content="Class Diagram:Vacation (Builder Pattern)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="類別圖：假期規劃 （建造者模式）">
+<meta property="og:url" content="https://yncbearz.github.io/2020/10/17/Class-Diagram-Vacation-Builder-Pattern/index.html">
+<meta property="og:site_name" content="YNCBearz">
+<meta property="og:description" content="Class Diagram:Vacation (Builder Pattern)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yncbearz.github.io/image/travel-car.jpeg">
+<meta property="article:published_time" content="2020-10-17T07:51:28.000Z">
+<meta property="article:modified_time" content="2020-10-17T10:09:16.822Z">
+<meta property="article:author" content="YNCBearz">
+<meta property="article:tag" content="Class Diagram">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yncbearz.github.io/image/travel-car.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/image/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-167983291-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Clean-Code/">Clean Code</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Design-Pattern/">Design Pattern</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Design-Pattern/">Design Pattern</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Class-Diagram-Vacation-Builder-Pattern"
+    class="article article-single article-type-post"
+    itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        類別圖：假期規劃 （建造者模式）
+        </h1>
+    
+
+        </header>
+        
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/10/17/Class-Diagram-Vacation-Builder-Pattern/" class="article-date">
+         <time datetime="2020-10-17T07:51:28.000Z" itemprop="datePublished">2020-10-17</time>
+      </a>
+    </div>
+
+
+            
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a>
+    </div>
+
+            
+
+            
+
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>Example: <a href="/2020/10/17/Example-Vacation-Builder-Pattern/" title="假期規劃">假期規劃</a></p>
+<hr>
+<img src="data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20contentScriptType%3D%22application%2Fecmascript%22%20contentStyleType%3D%22text%2Fcss%22%20height%3D%22490px%22%20preserveAspectRatio%3D%22none%22%20style%3D%22width%3A698px%3Bheight%3A490px%3Bbackground%3A%23FFFFFF%3B%22%20version%3D%221.1%22%20viewBox%3D%220%200%20698%20490%22%20width%3D%22698px%22%20zoomAndPan%3D%22magnify%22%3E%3Cdefs%3E%3Cfilter%20height%3D%22300%25%22%20id%3D%22f14j680hkysrni%22%20width%3D%22300%25%22%20x%3D%22-1%22%20y%3D%22-1%22%3E%3CfeGaussianBlur%20result%3D%22blurOut%22%20stdDeviation%3D%222.0%22%2F%3E%3CfeColorMatrix%20in%3D%22blurOut%22%20result%3D%22blurOut2%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20.4%200%22%2F%3E%3CfeOffset%20dx%3D%224.0%22%20dy%3D%224.0%22%20in%3D%22blurOut2%22%20result%3D%22blurOut3%22%2F%3E%3CfeBlend%20in%3D%22SourceGraphic%22%20in2%3D%22blurOut3%22%20mode%3D%22normal%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%3E%3C!--MD5%3D%5B419084f53f9916fdd9b3ef072a8de047%5D%0Aclass%20Itinerary--%3E%3Crect%20codeLine%3D%221%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f14j680hkysrni)%22%20height%3D%22150.4375%22%20id%3D%22Itinerary%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22161%22%20x%3D%22523%22%20y%3D%22326%22%2F%3E%3Cellipse%20cx%3D%22574.75%22%20cy%3D%22342%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M577.0938%2C337.6719%20C576.1563%2C337.2344%20575.5625%2C337.0938%20574.6875%2C337.0938%20C572.0625%2C337.0938%20570.0625%2C339.1719%20570.0625%2C341.8906%20L570.0625%2C343.0156%20C570.0625%2C345.5938%20572.1719%2C347.4844%20575.0625%2C347.4844%20C576.2813%2C347.4844%20577.4375%2C347.1875%20578.1875%2C346.6406%20C578.7656%2C346.2344%20579.0938%2C345.7813%20579.0938%2C345.3906%20C579.0938%2C344.9375%20578.7031%2C344.5469%20578.2344%2C344.5469%20C578.0156%2C344.5469%20577.8125%2C344.625%20577.625%2C344.8125%20C577.1719%2C345.2969%20577.1719%2C345.2969%20576.9844%2C345.3906%20C576.5625%2C345.6563%20575.875%2C345.7813%20575.1094%2C345.7813%20C573.0625%2C345.7813%20571.7656%2C344.6875%20571.7656%2C342.9844%20L571.7656%2C341.8906%20C571.7656%2C340.1094%20573.0156%2C338.7969%20574.75%2C338.7969%20C575.3281%2C338.7969%20575.9375%2C338.9531%20576.4063%2C339.2031%20C576.8906%2C339.4844%20577.0625%2C339.7031%20577.1563%2C340.1094%20C577.2188%2C340.5156%20577.25%2C340.6406%20577.3906%2C340.7656%20C577.5313%2C340.9063%20577.7656%2C341.0156%20577.9844%2C341.0156%20C578.25%2C341.0156%20578.5156%2C340.875%20578.6875%2C340.6563%20C578.7969%2C340.5%20578.8281%2C340.3125%20578.8281%2C339.8906%20L578.8281%2C338.4688%20C578.8281%2C338.0313%20578.8125%2C337.9063%20578.7188%2C337.75%20C578.5625%2C337.4844%20578.2813%2C337.3438%20577.9844%2C337.3438%20C577.6875%2C337.3438%20577.4844%2C337.4375%20577.2656%2C337.75%20L577.0938%2C337.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2249%22%20x%3D%22595.25%22%20y%3D%22346.1543%22%3EItinerary%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22524%22%20x2%3D%22683%22%20y1%3D%22358%22%20y2%3D%22358%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22534%2C364%2C538%2C368%2C534%2C372%2C530%2C368%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2264%22%20x%3D%22543%22%20y%3D%22372.2104%22%3Efrom%3A%20string%3C%2Ftext%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22534%2C376.8047%2C538%2C380.8047%2C534%2C384.8047%2C530%2C380.8047%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2249%22%20x%3D%22543%22%20y%3D%22385.0151%22%3Eto%3A%20string%3C%2Ftext%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22534%2C389.6094%2C538%2C393.6094%2C534%2C397.6094%2C530%2C393.6094%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2242%22%20x%3D%22543%22%20y%3D%22397.8198%22%3Eday%3A%20int%3C%2Ftext%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22534%2C402.4141%2C538%2C406.4141%2C534%2C410.4141%2C530%2C406.4141%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2267%22%20x%3D%22543%22%20y%3D%22410.6245%22%3Ehotel%3A%20string%3C%2Ftext%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22534%2C415.2188%2C538%2C419.2188%2C534%2C423.2188%2C530%2C419.2188%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2288%22%20x%3D%22543%22%20y%3D%22423.4292%22%3Etransport%3A%20string%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22524%22%20x2%3D%22683%22%20y1%3D%22430.0234%22%20y2%3D%22430.0234%22%2F%3E%3Cellipse%20cx%3D%22534%22%20cy%3D%22441.0234%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22110%22%20x%3D%22543%22%20y%3D%22444.2339%22%3E__set(name%2C%20value)%3C%2Ftext%3E%3Cellipse%20cx%3D%22534%22%20cy%3D%22453.8281%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22135%22%20x%3D%22543%22%20y%3D%22457.0386%22%3E__get(name)%3A%20string%20%7C%20int%3C%2Ftext%3E%3Cellipse%20cx%3D%22534%22%20cy%3D%22466.6328%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2285%22%20x%3D%22543%22%20y%3D%22469.8433%22%3EtoArray()%3A%20array%3C%2Ftext%3E%3C!--MD5%3D%5Bcaa95abc194bb72ef2166086ef466fa1%5D%0Aclass%20ItineraryPlanable--%3E%3Crect%20codeLine%3D%2214%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f14j680hkysrni)%22%20height%3D%22124.8281%22%20id%3D%22ItineraryPlanable%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22195%22%20x%3D%22327%22%20y%3D%22141%22%2F%3E%3Cellipse%20cx%3D%22369.9%22%20cy%3D%22157%22%20fill%3D%22%23B4A7E5%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M370.8531%2C153.7813%20L372.5719%2C153.7813%20C372.9625%2C153.7813%20373.15%2C153.75%20373.275%2C153.6719%20C373.5406%2C153.5156%20373.6813%2C153.2344%20373.6813%2C152.9375%20C373.6813%2C152.6719%20373.5719%2C152.4063%20373.3375%2C152.2344%20C373.1656%2C152.125%20373.025%2C152.0938%20372.5719%2C152.0938%20L367.4313%2C152.0938%20C366.9938%2C152.0938%20366.8688%2C152.1094%20366.7125%2C152.2031%20C366.4625%2C152.3594%20366.3063%2C152.6563%20366.3063%2C152.9375%20C366.3063%2C153.2188%20366.4469%2C153.4688%20366.6656%2C153.6406%20C366.8219%2C153.75%20367.0094%2C153.7813%20367.4313%2C153.7813%20L369.15%2C153.7813%20L369.15%2C160.2969%20L367.4313%2C160.2969%20C366.9938%2C160.2969%20366.8688%2C160.3125%20366.7125%2C160.4219%20C366.4625%2C160.5781%20366.3063%2C160.8594%20366.3063%2C161.1563%20C366.3063%2C161.4063%20366.4469%2C161.6719%20366.6656%2C161.8281%20C366.8219%2C161.9531%20367.025%2C162%20367.4313%2C162%20L372.5719%2C162%20C373.3219%2C162%20373.6813%2C161.7188%20373.6813%2C161.1563%20C373.6813%2C160.875%20373.5719%2C160.625%20373.3375%2C160.4531%20C373.1656%2C160.3281%20373.025%2C160.2969%20372.5719%2C160.2969%20L370.8531%2C160.2969%20L370.8531%2C153.7813%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20font-style%3D%22italic%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22101%22%20x%3D%22390.1%22%20y%3D%22161.1543%22%3EItineraryPlanable%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22328%22%20x2%3D%22521%22%20y1%3D%22173%22%20y2%3D%22173%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22328%22%20x2%3D%22521%22%20y1%3D%22181%22%20y2%3D%22181%22%2F%3E%3Cellipse%20cx%3D%22338%22%20cy%3D%22192%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22123%22%20x%3D%22347%22%20y%3D%22195.2104%22%3Efrom(string%20from)%3A%20self%3C%2Ftext%3E%3Cellipse%20cx%3D%22338%22%20cy%3D%22204.8047%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2293%22%20x%3D%22347%22%20y%3D%22208.0151%22%3Eto(string%20to)%3A%20self%3C%2Ftext%3E%3Cellipse%20cx%3D%22338%22%20cy%3D%22217.6094%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22145%22%20x%3D%22347%22%20y%3D%22220.8198%22%3EspendDays(int%20days)%3A%20self%3C%2Ftext%3E%3Cellipse%20cx%3D%22338%22%20cy%3D%22230.4141%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22136%22%20x%3D%22347%22%20y%3D%22233.6245%22%3EstayAt(string%20hotel)%3A%20self%3C%2Ftext%3E%3Cellipse%20cx%3D%22338%22%20cy%3D%22243.2188%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22169%22%20x%3D%22347%22%20y%3D%22246.4292%22%3EtravelBy(string%20transport)%3A%20self%3C%2Ftext%3E%3Cellipse%20cx%3D%22338%22%20cy%3D%22256.0234%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22128%22%20x%3D%22347%22%20y%3D%22259.2339%22%3EgetItinerary()%3A%20Itinerary%3C%2Ftext%3E%3C!--MD5%3D%5Bda7a22a27646586a92c9557710936b1c%5D%0Aclass%20ItineraryBuilder--%3E%3Crect%20codeLine%3D%2224%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f14j680hkysrni)%22%20height%3D%2273.6094%22%20id%3D%22ItineraryBuilder%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22127%22%20x%3D%22361%22%20y%3D%22364%22%2F%3E%3Cellipse%20cx%3D%22377.8%22%20cy%3D%22380%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M380.1438%2C375.6719%20C379.2063%2C375.2344%20378.6125%2C375.0938%20377.7375%2C375.0938%20C375.1125%2C375.0938%20373.1125%2C377.1719%20373.1125%2C379.8906%20L373.1125%2C381.0156%20C373.1125%2C383.5938%20375.2219%2C385.4844%20378.1125%2C385.4844%20C379.3313%2C385.4844%20380.4875%2C385.1875%20381.2375%2C384.6406%20C381.8156%2C384.2344%20382.1438%2C383.7813%20382.1438%2C383.3906%20C382.1438%2C382.9375%20381.7531%2C382.5469%20381.2844%2C382.5469%20C381.0656%2C382.5469%20380.8625%2C382.625%20380.675%2C382.8125%20C380.2219%2C383.2969%20380.2219%2C383.2969%20380.0344%2C383.3906%20C379.6125%2C383.6563%20378.925%2C383.7813%20378.1594%2C383.7813%20C376.1125%2C383.7813%20374.8156%2C382.6875%20374.8156%2C380.9844%20L374.8156%2C379.8906%20C374.8156%2C378.1094%20376.0656%2C376.7969%20377.8%2C376.7969%20C378.3781%2C376.7969%20378.9875%2C376.9531%20379.4563%2C377.2031%20C379.9406%2C377.4844%20380.1125%2C377.7031%20380.2063%2C378.1094%20C380.2688%2C378.5156%20380.3%2C378.6406%20380.4406%2C378.7656%20C380.5813%2C378.9063%20380.8156%2C379.0156%20381.0344%2C379.0156%20C381.3%2C379.0156%20381.5656%2C378.875%20381.7375%2C378.6563%20C381.8469%2C378.5%20381.8781%2C378.3125%20381.8781%2C377.8906%20L381.8781%2C376.4688%20C381.8781%2C376.0313%20381.8625%2C375.9063%20381.7688%2C375.75%20C381.6125%2C375.4844%20381.3313%2C375.3438%20381.0344%2C375.3438%20C380.7375%2C375.3438%20380.5344%2C375.4375%20380.3156%2C375.75%20L380.1438%2C375.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2291%22%20x%3D%22392.2%22%20y%3D%22384.1543%22%3EItineraryBuilder%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22362%22%20x2%3D%22487%22%20y1%3D%22396%22%20y2%3D%22396%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22372%2C402%2C376%2C406%2C372%2C410%2C368%2C406%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22101%22%20x%3D%22381%22%20y%3D%22410.2104%22%3Eitinerary%3A%20Itinerary%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22362%22%20x2%3D%22487%22%20y1%3D%22416.8047%22%20y2%3D%22416.8047%22%2F%3E%3Cellipse%20cx%3D%22372%22%20cy%3D%22427.8047%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2271%22%20x%3D%22381%22%20y%3D%22431.0151%22%3E__construct()%3C%2Ftext%3E%3C!--MD5%3D%5Bafc29061bc583ffbb883ce7bbdb0154a%5D%0Aclass%20TravelAgency--%3E%3Crect%20codeLine%3D%2234%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f14j680hkysrni)%22%20height%3D%2299.2188%22%20id%3D%22TravelAgency%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22283%22%20x%3D%229%22%20y%3D%22154%22%2F%3E%3Cellipse%20cx%3D%22105.25%22%20cy%3D%22170%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M107.5938%2C165.6719%20C106.6563%2C165.2344%20106.0625%2C165.0938%20105.1875%2C165.0938%20C102.5625%2C165.0938%20100.5625%2C167.1719%20100.5625%2C169.8906%20L100.5625%2C171.0156%20C100.5625%2C173.5938%20102.6719%2C175.4844%20105.5625%2C175.4844%20C106.7813%2C175.4844%20107.9375%2C175.1875%20108.6875%2C174.6406%20C109.2656%2C174.2344%20109.5938%2C173.7813%20109.5938%2C173.3906%20C109.5938%2C172.9375%20109.2031%2C172.5469%20108.7344%2C172.5469%20C108.5156%2C172.5469%20108.3125%2C172.625%20108.125%2C172.8125%20C107.6719%2C173.2969%20107.6719%2C173.2969%20107.4844%2C173.3906%20C107.0625%2C173.6563%20106.375%2C173.7813%20105.6094%2C173.7813%20C103.5625%2C173.7813%20102.2656%2C172.6875%20102.2656%2C170.9844%20L102.2656%2C169.8906%20C102.2656%2C168.1094%20103.5156%2C166.7969%20105.25%2C166.7969%20C105.8281%2C166.7969%20106.4375%2C166.9531%20106.9063%2C167.2031%20C107.3906%2C167.4844%20107.5625%2C167.7031%20107.6563%2C168.1094%20C107.7188%2C168.5156%20107.75%2C168.6406%20107.8906%2C168.7656%20C108.0313%2C168.9063%20108.2656%2C169.0156%20108.4844%2C169.0156%20C108.75%2C169.0156%20109.0156%2C168.875%20109.1875%2C168.6563%20C109.2969%2C168.5%20109.3281%2C168.3125%20109.3281%2C167.8906%20L109.3281%2C166.4688%20C109.3281%2C166.0313%20109.3125%2C165.9063%20109.2188%2C165.75%20C109.0625%2C165.4844%20108.7813%2C165.3438%20108.4844%2C165.3438%20C108.1875%2C165.3438%20107.9844%2C165.4375%20107.7656%2C165.75%20L107.5938%2C165.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2282%22%20x%3D%22125.75%22%20y%3D%22174.1543%22%3ETravelAgency%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%2210%22%20x2%3D%22291%22%20y1%3D%22186%22%20y2%3D%22186%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%2220%2C192%2C24%2C196%2C20%2C200%2C16%2C196%22%20style%3D%22stroke%3A%23B38D22%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22189%22%20x%3D%2229%22%20y%3D%22200.2104%22%3EitineraryBuilder%3A%20ItineraryPlanable%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%2210%22%20x2%3D%22291%22%20y1%3D%22206.8047%22%20y2%3D%22206.8047%22%2F%3E%3Cellipse%20cx%3D%2220%22%20cy%3D%22217.8047%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22257%22%20x%3D%2229%22%20y%3D%22221.0151%22%3E__construct(ItineraryPlanable%20itineraryBuilder)%3C%2Ftext%3E%3Cellipse%20cx%3D%2220%22%20cy%3D%22230.6094%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22193%22%20x%3D%2229%22%20y%3D%22233.8198%22%3EgetHighSpeedRailItinerary()%3A%20array%3C%2Ftext%3E%3Cellipse%20cx%3D%2220%22%20cy%3D%22243.4141%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22197%22%20x%3D%2229%22%20y%3D%22246.6245%22%3EgetFiveDaysTokyoItinerary()%3A%20array%3C%2Ftext%3E%3C!--MD5%3D%5B175f95e045c1a44aed0b30df3abe0e5c%5D%0Aclass%20Program--%3E%3Crect%20codeLine%3D%2245%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f14j680hkysrni)%22%20height%3D%2273.6094%22%20id%3D%22Program%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22196%22%20x%3D%2252.5%22%20y%3D%227%22%2F%3E%3Cellipse%20cx%3D%22121.25%22%20cy%3D%2223%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M123.5938%2C18.6719%20C122.6563%2C18.2344%20122.0625%2C18.0938%20121.1875%2C18.0938%20C118.5625%2C18.0938%20116.5625%2C20.1719%20116.5625%2C22.8906%20L116.5625%2C24.0156%20C116.5625%2C26.5938%20118.6719%2C28.4844%20121.5625%2C28.4844%20C122.7813%2C28.4844%20123.9375%2C28.1875%20124.6875%2C27.6406%20C125.2656%2C27.2344%20125.5938%2C26.7813%20125.5938%2C26.3906%20C125.5938%2C25.9375%20125.2031%2C25.5469%20124.7344%2C25.5469%20C124.5156%2C25.5469%20124.3125%2C25.625%20124.125%2C25.8125%20C123.6719%2C26.2969%20123.6719%2C26.2969%20123.4844%2C26.3906%20C123.0625%2C26.6563%20122.375%2C26.7813%20121.6094%2C26.7813%20C119.5625%2C26.7813%20118.2656%2C25.6875%20118.2656%2C23.9844%20L118.2656%2C22.8906%20C118.2656%2C21.1094%20119.5156%2C19.7969%20121.25%2C19.7969%20C121.8281%2C19.7969%20122.4375%2C19.9531%20122.9063%2C20.2031%20C123.3906%2C20.4844%20123.5625%2C20.7031%20123.6563%2C21.1094%20C123.7188%2C21.5156%20123.75%2C21.6406%20123.8906%2C21.7656%20C124.0313%2C21.9063%20124.2656%2C22.0156%20124.4844%2C22.0156%20C124.75%2C22.0156%20125.0156%2C21.875%20125.1875%2C21.6563%20C125.2969%2C21.5%20125.3281%2C21.3125%20125.3281%2C20.8906%20L125.3281%2C19.4688%20C125.3281%2C19.0313%20125.3125%2C18.9063%20125.2188%2C18.75%20C125.0625%2C18.4844%20124.7813%2C18.3438%20124.4844%2C18.3438%20C124.1875%2C18.3438%20123.9844%2C18.4375%20123.7656%2C18.75%20L123.5938%2C18.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2250%22%20x%3D%22141.75%22%20y%3D%2227.1543%22%3EProgram%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%2253.5%22%20x2%3D%22247.5%22%20y1%3D%2239%22%20y2%3D%2239%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%2253.5%22%20x2%3D%22247.5%22%20y1%3D%2247%22%20y2%3D%2247%22%2F%3E%3Cellipse%20cx%3D%2263.5%22%20cy%3D%2258%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22153%22%20x%3D%2272.5%22%20y%3D%2261.2104%22%3EgetDomesticTravel()%3A%20array%3C%2Ftext%3E%3Cellipse%20cx%3D%2263.5%22%20cy%3D%2270.8047%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22170%22%20x%3D%2272.5%22%20y%3D%2274.0151%22%3EgetInternationalTravel()%3A%20array%3C%2Ftext%3E%3C!--MD5%3D%5Bc0ac9f97d2f3f59b526454b4afc19f07%5D%0Areverse%20link%20ItineraryPlanable%20to%20ItineraryBuilder--%3E%3Cpath%20codeLine%3D%2231%22%20d%3D%22M424.5%2C286.273%20C424.5%2C313.278%20424.5%2C341.955%20424.5%2C363.757%20%22%20fill%3D%22none%22%20id%3D%22ItineraryPlanable-backto-ItineraryBuilder%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3Bstroke-dasharray%3A7.0%2C7.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22none%22%20points%3D%22417.5%2C286.089%2C424.5%2C266.089%2C431.5%2C286.089%2C417.5%2C286.089%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Baa7b3503a785ee68e2ae8193a55441cb%5D%0Alink%20ItineraryBuilder%20to%20Itinerary--%3E%3Cpath%20codeLine%3D%2232%22%20d%3D%22M488.129%2C401%20C497.979%2C401%20507.829%2C401%20517.679%2C401%20%22%20fill%3D%22none%22%20id%3D%22ItineraryBuilder-to-Itinerary%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22522.83%2C401%2C513.83%2C397%2C517.83%2C401%2C513.83%2C405%2C522.83%2C401%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bd678bc4cab4d04886384b77daad51f75%5D%0Alink%20TravelAgency%20to%20ItineraryPlanable--%3E%3Cpath%20codeLine%3D%2243%22%20d%3D%22M292.049%2C203.5%20C301.962%2C203.5%20311.875%2C203.5%20321.788%2C203.5%20%22%20fill%3D%22none%22%20id%3D%22TravelAgency-to-ItineraryPlanable%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22326.972%2C203.5%2C317.972%2C199.5%2C321.972%2C203.5%2C317.972%2C207.5%2C326.972%2C203.5%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bc32470c066a48e61e34dcb746009a8c0%5D%0Alink%20Program%20to%20TravelAgency--%3E%3Cpath%20codeLine%3D%2251%22%20d%3D%22M150.5%2C81.134%20C150.5%2C101.229%20150.5%2C126.622%20150.5%2C148.981%20%22%20fill%3D%22none%22%20id%3D%22Program-to-TravelAgency%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22150.5%2C153.998%2C154.5%2C144.998%2C150.5%2C148.998%2C146.5%2C144.998%2C150.5%2C153.998%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Be41de79ec9fda029ba5911bb8c67f567%5D%0A%40startuml%0D%0Aclass%20Itinerary%0D%0A%7B%0D%0A%20%20%23%20from%3A%20string%0D%0A%20%20%23%20to%3A%20string%0D%0A%20%20%23%20day%3A%20int%0D%0A%20%20%23%20hotel%3A%20string%0D%0A%20%20%23%20transport%3A%20string%0D%0A%0D%0A%20%20%2B%20__set(name%2C%20value)%0D%0A%20%20%2B%20__get(name)%3A%20string%20%7C%20int%0D%0A%20%20%2B%20toArray()%3A%20array%0D%0A%7D%0D%0A%0D%0Ainterface%20ItineraryPlanable%0D%0A%7B%0D%0A%20%20%2B%20from(string%20from)%3A%20self%0D%0A%20%20%2B%20to(string%20to)%3A%20self%0D%0A%20%20%2B%20spendDays(int%20days)%3A%20self%0D%0A%20%20%2B%20stayAt(string%20hotel)%3A%20self%0D%0A%20%20%2B%20travelBy(string%20transport)%3A%20self%0D%0A%20%20%2B%20getItinerary()%3A%20Itinerary%0D%0A%7D%0D%0A%0D%0Aclass%20ItineraryBuilder%0D%0A%7B%0D%0A%20%20%23%20itinerary%3A%20Itinerary%0D%0A%0D%0A%20%20%2B%20__construct()%0D%0A%7D%0D%0A%0D%0AItineraryPlanable%20%3C%7C..%20ItineraryBuilder%0D%0AItineraryBuilder%20-%3E%20Itinerary%0D%0A%0D%0Aclass%20TravelAgency%0D%0A%7B%0D%0A%20%20%23%20itineraryBuilder%3A%20ItineraryPlanable%0D%0A%0D%0A%20%20%2B%20__construct(ItineraryPlanable%20itineraryBuilder)%0D%0A%20%20%2B%20getHighSpeedRailItinerary()%3A%20array%0D%0A%20%20%2B%20getFiveDaysTokyoItinerary()%3A%20array%0D%0A%7D%0D%0A%0D%0ATravelAgency%20-%3E%20ItineraryPlanable%0D%0A%0D%0Aclass%20Program%0D%0A%7B%0D%0A%20%20%2B%20getDomesticTravel()%3A%20array%0D%0A%20%20%2B%20getInternationalTravel()%3A%20array%0D%0A%7D%0D%0A%0D%0AProgram%20-%20-%3E%20TravelAgency%0D%0A%40enduml%0D%0A%0APlantUML%20version%201.2021.9beta2(Unknown%20compile%20time)%0A(GPL%20source%20distribution)%0AJava%20Runtime%3A%20Java(TM)%20SE%20Runtime%20Environment%0AJVM%3A%20Java%20HotSpot(TM)%2064-Bit%20Server%20VM%0ADefault%20Encoding%3A%20UTF-8%0ALanguage%3A%20en%0ACountry%3A%20US%0A--%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+
+<p>ʕ •ᴥ•ʔ：若不熟悉 UML 類別圖，可參考<a href="/2020/06/26/Class-Diagram-Description/" title="UML類別圖說明">UML類別圖說明</a>。</p>
+
+        </div>
+        <footer class="article-footer">
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "YNCBearz"
+        },
+        "headline": "類別圖：假期規劃 （建造者模式）",
+        "image": "https://yncbearz.github.io/image/travel-car.jpeg",
+        "keywords": "Class Diagram",
+        "genre": "Design Pattern",
+        "datePublished": "2020-10-17",
+        "dateCreated": "2020-10-17",
+        "dateModified": "2020-10-17",
+        "url": "https://yncbearz.github.io/2020/10/17/Class-Diagram-Vacation-Builder-Pattern/",
+        "description": "Class Diagram:Vacation (Builder Pattern)",
+        "wordCount": 10
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/YNCBearz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com/channel/UClWx47-swj-zud4t8i8E-AA/featured" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="paper-plane" href="mailto:yncbearz@gmail.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-paper-plane"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/10/25/Memento-Pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            備忘錄模式
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/10/17/Example-Vacation-Builder-Pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">範例：假期規劃 （建造者模式）</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/seo.jpeg)" alt="107.binary-tree-level-order-traversal-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="title">107.binary-tree-level-order-traversal-ii</a></p>
+                            <p class="item-date"><time datetime="2021-04-22T15:55:42.000Z" itemprop="datePublished">2021-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/11/101-symmetric-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/landscape-paris.jpeg)" alt="101.symmetric-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/11/101-symmetric-tree/" class="title">101.symmetric-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-11T15:31:42.000Z" itemprop="datePublished">2021-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/10/100-same-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/green-tree.jpeg)" alt="100.same-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/10/100-same-tree/" class="title">100.same-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-10T09:18:39.000Z" itemprop="datePublished">2021-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/circular-staircase.jpeg)" alt="95.unique-binary-search-trees-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="title">95.unique-binary-search-trees-ii</a></p>
+                            <p class="item-date"><time datetime="2021-01-22T13:46:43.000Z" itemprop="datePublished">2021-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/14/96-unique-binary-search-trees/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/think-outside-of-the-box.jpeg)" alt="96.unique-binary-search-trees" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/14/96-unique-binary-search-trees/" class="title">96.unique-binary-search-trees</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T15:23:38.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Example/" rel="tag">Example</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Menu/" rel="tag">Menu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/" rel="tag">Note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Principle/" rel="tag">Principle</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/S-O-L-I-D/" rel="tag">S.O.L.I.D</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <!-- <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a> -->
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 YNCBearz</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a
+                        href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+                
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '9bacc98e5d3163bf3752',
+        clientSecret: '567948f000fe871abb4c05f3779b09f1821e759b',
+        id: 'f878b99f7fcad41e778be207a0fc12d0',
+        repo: 'yncbearz.github.io',
+        owner: 'YNCBearz',
+        admin: "YNCBearz"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1626319491531')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>

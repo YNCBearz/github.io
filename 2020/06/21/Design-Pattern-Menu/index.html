@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json>
+    <meta charset="utf-8" />
+
+    
+
+
+
+
+<link rel="apple-touch-icon" sizes="512x512" href="/image/icons/512x512.png">
+
+<link rel="apple-touch-icon" sizes="192x192" href="/image/icons/192x192.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/image/icons/180x180.png">
+
+<link rel="apple-touch-icon" sizes="144x144" href="/image/icons/white-bg/144x144.png">
+
+<link rel="apple-touch-icon" sizes="128x128" href="/image/icons/white-bg/128x128.png">
+
+<link rel="apple-touch-icon" sizes="96x96" href="/image/icons/white-bg/96x96.png">
+
+<link rel="apple-touch-icon" sizes="48x48" href="/image/icons/white-bg/48x48.png">
+
+<meta name="msapplication-TileColor" content="#006bde" />
+
+<!-- <meta name="theme-color" content="#006bde" /> -->
+<meta name="theme-color" content="#202124" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="YNCBearz" />
+
+
+    
+    <title>設計模式目錄 | YNCBearz</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Menu" />
+    
+    <meta name="description" content="Design Pattern Menu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="設計模式目錄">
+<meta property="og:url" content="https://yncbearz.github.io/2020/06/21/Design-Pattern-Menu/index.html">
+<meta property="og:site_name" content="YNCBearz">
+<meta property="og:description" content="Design Pattern Menu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yncbearz.github.io/image/coffee-menu.jpeg">
+<meta property="article:published_time" content="2020-06-21T12:21:04.000Z">
+<meta property="article:modified_time" content="2020-12-27T13:26:22.661Z">
+<meta property="article:author" content="YNCBearz">
+<meta property="article:tag" content="Menu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yncbearz.github.io/image/coffee-menu.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/image/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-167983291-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Clean-Code/">Clean Code</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Design-Pattern/">Design Pattern</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Design-Pattern/">Design Pattern</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Design-Pattern-Menu"
+    class="article article-single article-type-post"
+    itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        設計模式目錄
+        </h1>
+    
+
+        </header>
+        
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/06/21/Design-Pattern-Menu/" class="article-date">
+         <time datetime="2020-06-21T12:21:04.000Z" itemprop="datePublished">2020-06-21</time>
+      </a>
+    </div>
+
+
+            
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Menu/" rel="tag">Menu</a>
+    </div>
+
+            
+
+            
+
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="Design-Pattern-Menu"><a href="#Design-Pattern-Menu" class="headerlink" title="Design Pattern Menu"></a>Design Pattern Menu</h2><table>
+<thead>
+<tr>
+<th align="left">模式</th>
+<th align="left">範例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><a href="/2020/06/21/Simple-Factory-Pattern/" title="簡單工廠模式">簡單工廠模式</a> (Simple Factory Pattern)</strong></td>
+<td align="left"><a href="/2020/06/21/Example-Calculator-Simple-Factory-Pattern/" title="計算機">計算機</a>、<a href="/2020/08/30/Example-Transport-Simple-Factory-Pattern/" title="運輸系統">運輸系統</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/08/30/Factory-Method-Pattern/" title="工廠方法模式">工廠方法模式</a> (Factory Method Pattern)</strong></td>
+<td align="left"><a href="/2020/08/30/Example-Transport-Factory-Method-Pattern/" title="運輸系統">運輸系統</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/09/04/Abstract-Factory-Pattern/" title="抽象工廠模式">抽象工廠模式</a> (Abstract Factory Pattern)</strong></td>
+<td align="left"><a href="/2020/09/04/Example-Transport-Abstract-Factory-Pattern/" title="運輸系統">運輸系統</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/07/05/Strategy-Pattern/" title="策略模式">策略模式</a> (Strategy Pattern)</strong></td>
+<td align="left"><a href="/2020/07/05/Example-Cash-Register-Strategy-Pattern/" title="收銀機">收銀機</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/07/12/Decorator-Pattern/" title="裝飾者模式">裝飾者模式</a> (Decorator Pattern)</strong></td>
+<td align="left"><a href="/2020/07/12/Example-Burgers-Ordering-System-Decorator-Pattern/" title="漢堡點餐系統">漢堡點餐系統</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/07/15/Singleton-Pattern/" title="單例模式">單例模式</a> (Singleton Pattern)</strong></td>
+<td align="left"><a href="/2020/07/16/Example-DB-Connection-Singleton-Pattern/" title="資料庫連線">資料庫連線</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/07/20/Command-Pattern/" title="命令模式">命令模式</a> (Command Pattern)</strong></td>
+<td align="left"><a href="/2020/07/22/Example-Robot-Chef-Command-Pattern/" title="機器人廚師">機器人廚師</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/08/02/Template-Method-Pattern/" title="樣板方法模式">樣板方法模式</a> (Template Method Pattern)</strong></td>
+<td align="left"><a href="/2020/08/02/Example-Video-Maker-Template-Method-Pattern/" title="影片製作大師">影片製作大師</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/08/09/Adapter-Pattern/" title="轉接頭模式">轉接頭模式</a> (Adapter Pattern)</strong></td>
+<td align="left"><a href="/2020/08/09/Example-Talent-Show-Adapter-Pattern/" title="才藝表演">才藝表演</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/08/16/Facade-Pattern/" title="外觀模式">外觀模式</a> (Facade Pattern)</strong></td>
+<td align="left"><a href="/2020/08/16/Example-Buffet-Facade-Pattern/" title="自助餐餐廳">自助餐餐廳</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/08/21/State-Pattern/" title="狀態模式">狀態模式</a> (State Pattern)</strong></td>
+<td align="left"><a href="/2020/08/21/Example-Premium-State-Pattern/" title="會員制">會員制</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/09/13/Observer-Pattern/" title="觀察者模式">觀察者模式</a> (Observer Pattern)</strong></td>
+<td align="left"><a href="/2020/09/16/Example-Line-Group-Observer-Pattern/" title="Line群組通知">Line群組通知</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/09/27/Iterator-Pattern/" title="迭代器模式">迭代器模式</a> (Iterator Pattern)</strong></td>
+<td align="left"><a href="/2020/09/27/Example-Top-Song-Iterator-Pattern/" title="歌曲排行">歌曲排行</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/10/04/Proxy-Pattern/" title="代理模式">代理模式</a> (Proxy Pattern)</strong></td>
+<td align="left"><a href="/2020/10/04/Example-Cache-Proxy-Pattern/" title="快取代理">快取代理</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/10/11/Prototype-Pattern/" title="原型模式">原型模式</a> (Prototype Pattern)</strong></td>
+<td align="left"><a href="/2020/10/11/Example-Three-Little-Pigs-Prototype-Pattern/" title="三隻小豬">三隻小豬</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/10/17/Builder-Pattern/" title="建造者模式">建造者模式</a> (Builder Pattern)</strong></td>
+<td align="left"><a href="/2020/10/17/Example-Vacation-Builder-Pattern/" title="假期規劃">假期規劃</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/10/25/Memento-Pattern/" title="備忘錄模式">備忘錄模式</a> (Memento Pattern)</strong></td>
+<td align="left"><a href="/2020/10/25/Example-Git-Memento-Pattern/" title="仿真Git">仿真Git</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/11/02/Flyweight-Pattern/" title="蠅量模式">蠅量模式</a> (Flyweight Pattern)</strong></td>
+<td align="left"><a href="/2020/11/02/Example-Blocks-Flyweight-Pattern/" title="文字積木">文字積木</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/11/04/Interpreter-Pattern/" title="解譯器模式">解譯器模式</a> (Interpreter Pattern)</strong></td>
+<td align="left"><a href="/2020/11/08/Example-Morse-Code-Interpreter-Pattern/" title="摩斯電碼">摩斯電碼</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/11/15/Composite-Pattern/" title="組合模式">組合模式</a> (Composite Pattern)</strong></td>
+<td align="left"><a href="/2020/11/15/Example-Taxonomy-Composite-Pattern/" title="生物分類學">生物分類學</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/11/21/Bridge-Pattern/" title="橋接模式">橋接模式</a> (Bridge Pattern)</strong></td>
+<td align="left"><a href="/2020/11/21/Example-Zodiac-Bridge-Pattern/" title="十二生肖">十二生肖</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/12/11/Chain-Of-Responsibility-Pattern/" title="職責鏈模式">職責鏈模式</a> (Chain Of Responsibility Pattern)</strong></td>
+<td align="left"><a href="/2020/12/11/Example-Software-Chain-Of-Responsibility-Pattern/" title="新產品開發">新產品開發</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/12/20/Mediator-Pattern/" title="中介者模式">中介者模式</a> (Mediator Pattern)</strong></td>
+<td align="left"><a href="/2020/12/20/Example-Say-Hello-Mediator-Pattern/" title="打招呼">打招呼</a></td>
+</tr>
+<tr>
+<td align="left"><strong><a href="/2020/12/27/Visitor-Pattern/" title="訪問者模式">訪問者模式</a> (Visitor Pattern)</strong></td>
+<td align="left"><a href="/2020/12/27/Example-Wedding-Visitor-Pattern/" title="各國婚禮">各國婚禮</a></td>
+</tr>
+</tbody></table>
+<p>ʕ •ᴥ•ʔ：會在這裡陸續更新！</p>
+
+        </div>
+        <footer class="article-footer">
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "YNCBearz"
+        },
+        "headline": "設計模式目錄",
+        "image": "https://yncbearz.github.io/image/coffee-menu.jpeg",
+        "keywords": "Menu",
+        "genre": "Design Pattern",
+        "datePublished": "2020-06-21",
+        "dateCreated": "2020-06-21",
+        "dateModified": "2020-12-27",
+        "url": "https://yncbearz.github.io/2020/06/21/Design-Pattern-Menu/",
+        "description": "Design Pattern Menu",
+        "wordCount": 212
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/YNCBearz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com/channel/UClWx47-swj-zud4t8i8E-AA/featured" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="paper-plane" href="mailto:yncbearz@gmail.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-paper-plane"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/06/21/Simple-Factory-Pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            簡單工廠模式
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/06/08/Dependency-Inversion-Principle/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">依賴反轉原則</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/seo.jpeg)" alt="107.binary-tree-level-order-traversal-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="title">107.binary-tree-level-order-traversal-ii</a></p>
+                            <p class="item-date"><time datetime="2021-04-22T15:55:42.000Z" itemprop="datePublished">2021-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/11/101-symmetric-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/landscape-paris.jpeg)" alt="101.symmetric-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/11/101-symmetric-tree/" class="title">101.symmetric-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-11T15:31:42.000Z" itemprop="datePublished">2021-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/10/100-same-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/green-tree.jpeg)" alt="100.same-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/10/100-same-tree/" class="title">100.same-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-10T09:18:39.000Z" itemprop="datePublished">2021-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/circular-staircase.jpeg)" alt="95.unique-binary-search-trees-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="title">95.unique-binary-search-trees-ii</a></p>
+                            <p class="item-date"><time datetime="2021-01-22T13:46:43.000Z" itemprop="datePublished">2021-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/14/96-unique-binary-search-trees/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/think-outside-of-the-box.jpeg)" alt="96.unique-binary-search-trees" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/14/96-unique-binary-search-trees/" class="title">96.unique-binary-search-trees</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T15:23:38.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Example/" rel="tag">Example</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Menu/" rel="tag">Menu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/" rel="tag">Note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Principle/" rel="tag">Principle</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/S-O-L-I-D/" rel="tag">S.O.L.I.D</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <!-- <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a> -->
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 YNCBearz</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a
+                        href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+                
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '9bacc98e5d3163bf3752',
+        clientSecret: '567948f000fe871abb4c05f3779b09f1821e759b',
+        id: '11b7623fb41872c3bbc8cb2db631c657',
+        repo: 'yncbearz.github.io',
+        owner: 'YNCBearz',
+        admin: "YNCBearz"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1626319491531')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>

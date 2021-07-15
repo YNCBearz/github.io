@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json>
+    <meta charset="utf-8" />
+
+    
+
+
+
+
+<link rel="apple-touch-icon" sizes="512x512" href="/image/icons/512x512.png">
+
+<link rel="apple-touch-icon" sizes="192x192" href="/image/icons/192x192.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/image/icons/180x180.png">
+
+<link rel="apple-touch-icon" sizes="144x144" href="/image/icons/white-bg/144x144.png">
+
+<link rel="apple-touch-icon" sizes="128x128" href="/image/icons/white-bg/128x128.png">
+
+<link rel="apple-touch-icon" sizes="96x96" href="/image/icons/white-bg/96x96.png">
+
+<link rel="apple-touch-icon" sizes="48x48" href="/image/icons/white-bg/48x48.png">
+
+<meta name="msapplication-TileColor" content="#006bde" />
+
+<!-- <meta name="theme-color" content="#006bde" /> -->
+<meta name="theme-color" content="#202124" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="YNCBearz" />
+
+
+    
+    <title>類別圖：三隻小豬 （原型模式） | YNCBearz</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Class Diagram" />
+    
+    <meta name="description" content="Class Diagram:Three Little Pigs (Prototype Pattern)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="類別圖：三隻小豬 （原型模式）">
+<meta property="og:url" content="https://yncbearz.github.io/2020/10/11/Class-Diagram-Three-Little-Pigs-Prototype-Pattern/index.html">
+<meta property="og:site_name" content="YNCBearz">
+<meta property="og:description" content="Class Diagram:Three Little Pigs (Prototype Pattern)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yncbearz.github.io/image/cat-sleeping.jpeg">
+<meta property="article:published_time" content="2020-10-11T14:38:30.000Z">
+<meta property="article:modified_time" content="2020-10-30T17:11:44.069Z">
+<meta property="article:author" content="YNCBearz">
+<meta property="article:tag" content="Class Diagram">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yncbearz.github.io/image/cat-sleeping.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/image/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-167983291-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Clean-Code/">Clean Code</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Design-Pattern/">Design Pattern</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Design-Pattern/">Design Pattern</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Class-Diagram-Three-Little-Pigs-Prototype-Pattern"
+    class="article article-single article-type-post"
+    itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        類別圖：三隻小豬 （原型模式）
+        </h1>
+    
+
+        </header>
+        
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/10/11/Class-Diagram-Three-Little-Pigs-Prototype-Pattern/" class="article-date">
+         <time datetime="2020-10-11T14:38:30.000Z" itemprop="datePublished">2020-10-11</time>
+      </a>
+    </div>
+
+
+            
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a>
+    </div>
+
+            
+
+            
+
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>Example: <a href="/2020/10/11/Example-Three-Little-Pigs-Prototype-Pattern/" title="三隻小豬">三隻小豬</a></p>
+<hr>
+<img src="data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20contentScriptType%3D%22application%2Fecmascript%22%20contentStyleType%3D%22text%2Fcss%22%20height%3D%22228px%22%20preserveAspectRatio%3D%22none%22%20style%3D%22width%3A457px%3Bheight%3A228px%3Bbackground%3A%23FFFFFF%3B%22%20version%3D%221.1%22%20viewBox%3D%220%200%20457%20228%22%20width%3D%22457px%22%20zoomAndPan%3D%22magnify%22%3E%3Cdefs%3E%3Cfilter%20height%3D%22300%25%22%20id%3D%22f1g2wqou0203l4%22%20width%3D%22300%25%22%20x%3D%22-1%22%20y%3D%22-1%22%3E%3CfeGaussianBlur%20result%3D%22blurOut%22%20stdDeviation%3D%222.0%22%2F%3E%3CfeColorMatrix%20in%3D%22blurOut%22%20result%3D%22blurOut2%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20.4%200%22%2F%3E%3CfeOffset%20dx%3D%224.0%22%20dy%3D%224.0%22%20in%3D%22blurOut2%22%20result%3D%22blurOut3%22%2F%3E%3CfeBlend%20in%3D%22SourceGraphic%22%20in2%3D%22blurOut3%22%20mode%3D%22normal%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%3E%3C!--MD5%3D%5B08dfe6c59ed9ecb4018cfd2b80128be4%5D%0Aclass%20Wall--%3E%3Crect%20codeLine%3D%221%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f1g2wqou0203l4)%22%20height%3D%2273.6094%22%20id%3D%22Wall%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22179%22%20x%3D%22264.5%22%20y%3D%22134%22%2F%3E%3Cellipse%20cx%3D%22337.25%22%20cy%3D%22150%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M339.5938%2C145.6719%20C338.6563%2C145.2344%20338.0625%2C145.0938%20337.1875%2C145.0938%20C334.5625%2C145.0938%20332.5625%2C147.1719%20332.5625%2C149.8906%20L332.5625%2C151.0156%20C332.5625%2C153.5938%20334.6719%2C155.4844%20337.5625%2C155.4844%20C338.7813%2C155.4844%20339.9375%2C155.1875%20340.6875%2C154.6406%20C341.2656%2C154.2344%20341.5938%2C153.7813%20341.5938%2C153.3906%20C341.5938%2C152.9375%20341.2031%2C152.5469%20340.7344%2C152.5469%20C340.5156%2C152.5469%20340.3125%2C152.625%20340.125%2C152.8125%20C339.6719%2C153.2969%20339.6719%2C153.2969%20339.4844%2C153.3906%20C339.0625%2C153.6563%20338.375%2C153.7813%20337.6094%2C153.7813%20C335.5625%2C153.7813%20334.2656%2C152.6875%20334.2656%2C150.9844%20L334.2656%2C149.8906%20C334.2656%2C148.1094%20335.5156%2C146.7969%20337.25%2C146.7969%20C337.8281%2C146.7969%20338.4375%2C146.9531%20338.9063%2C147.2031%20C339.3906%2C147.4844%20339.5625%2C147.7031%20339.6563%2C148.1094%20C339.7188%2C148.5156%20339.75%2C148.6406%20339.8906%2C148.7656%20C340.0313%2C148.9063%20340.2656%2C149.0156%20340.4844%2C149.0156%20C340.75%2C149.0156%20341.0156%2C148.875%20341.1875%2C148.6563%20C341.2969%2C148.5%20341.3281%2C148.3125%20341.3281%2C147.8906%20L341.3281%2C146.4688%20C341.3281%2C146.0313%20341.3125%2C145.9063%20341.2188%2C145.75%20C341.0625%2C145.4844%20340.7813%2C145.3438%20340.4844%2C145.3438%20C340.1875%2C145.3438%20339.9844%2C145.4375%20339.7656%2C145.75%20L339.5938%2C145.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2225%22%20x%3D%22357.75%22%20y%3D%22154.1543%22%3EWall%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22265.5%22%20x2%3D%22442.5%22%20y1%3D%22166%22%20y2%3D%22166%22%2F%3E%3Cellipse%20cx%3D%22275.5%22%20cy%3D%22177%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3Bfill%3Anone%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2285%22%20x%3D%22284.5%22%20y%3D%22180.2104%22%3Ematerial%3A%20string%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22265.5%22%20x2%3D%22442.5%22%20y1%3D%22186.8047%22%20y2%3D%22186.8047%22%2F%3E%3Cellipse%20cx%3D%22275.5%22%20cy%3D%22197.8047%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22153%22%20x%3D%22284.5%22%20y%3D%22201.0151%22%3E__construct(string%20material)%3C%2Ftext%3E%3C!--MD5%3D%5B8560f289a30852a9f75d64e53f926853%5D%0Aclass%20Building--%3E%3Crect%20codeLine%3D%228%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f1g2wqou0203l4)%22%20height%3D%2286.4141%22%20id%3D%22Building%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%22222%22%20x%3D%227%22%20y%3D%22128%22%2F%3E%3Cellipse%20cx%3D%2290.25%22%20cy%3D%22144%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M92.5938%2C139.6719%20C91.6563%2C139.2344%2091.0625%2C139.0938%2090.1875%2C139.0938%20C87.5625%2C139.0938%2085.5625%2C141.1719%2085.5625%2C143.8906%20L85.5625%2C145.0156%20C85.5625%2C147.5938%2087.6719%2C149.4844%2090.5625%2C149.4844%20C91.7813%2C149.4844%2092.9375%2C149.1875%2093.6875%2C148.6406%20C94.2656%2C148.2344%2094.5938%2C147.7813%2094.5938%2C147.3906%20C94.5938%2C146.9375%2094.2031%2C146.5469%2093.7344%2C146.5469%20C93.5156%2C146.5469%2093.3125%2C146.625%2093.125%2C146.8125%20C92.6719%2C147.2969%2092.6719%2C147.2969%2092.4844%2C147.3906%20C92.0625%2C147.6563%2091.375%2C147.7813%2090.6094%2C147.7813%20C88.5625%2C147.7813%2087.2656%2C146.6875%2087.2656%2C144.9844%20L87.2656%2C143.8906%20C87.2656%2C142.1094%2088.5156%2C140.7969%2090.25%2C140.7969%20C90.8281%2C140.7969%2091.4375%2C140.9531%2091.9063%2C141.2031%20C92.3906%2C141.4844%2092.5625%2C141.7031%2092.6563%2C142.1094%20C92.7188%2C142.5156%2092.75%2C142.6406%2092.8906%2C142.7656%20C93.0313%2C142.9063%2093.2656%2C143.0156%2093.4844%2C143.0156%20C93.75%2C143.0156%2094.0156%2C142.875%2094.1875%2C142.6563%20C94.2969%2C142.5%2094.3281%2C142.3125%2094.3281%2C141.8906%20L94.3281%2C140.4688%20C94.3281%2C140.0313%2094.3125%2C139.9063%2094.2188%2C139.75%20C94.0625%2C139.4844%2093.7813%2C139.3438%2093.4844%2C139.3438%20C93.1875%2C139.3438%2092.9844%2C139.4375%2092.7656%2C139.75%20L92.5938%2C139.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2247%22%20x%3D%22110.75%22%20y%3D%22148.1543%22%3EBuilding%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%228%22%20x2%3D%22228%22%20y1%3D%22160%22%20y2%3D%22160%22%2F%3E%3Cellipse%20cx%3D%2218%22%20cy%3D%22171%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3Bfill%3Anone%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2271%22%20x%3D%2227%22%20y%3D%22174.2104%22%3Ename%3A%20string%3C%2Ftext%3E%3Cellipse%20cx%3D%2218%22%20cy%3D%22183.8047%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3Bfill%3Anone%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2253%22%20x%3D%2227%22%20y%3D%22187.0151%22%3Ewall%3A%20Wall%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%228%22%20x2%3D%22228%22%20y1%3D%22193.6094%22%20y2%3D%22193.6094%22%2F%3E%3Cellipse%20cx%3D%2218%22%20cy%3D%22204.6094%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%22196%22%20x%3D%2227%22%20y%3D%22207.8198%22%3E__construct(Wall%20wall%2C%20string%20name)%3C%2Ftext%3E%3C!--MD5%3D%5B175f95e045c1a44aed0b30df3abe0e5c%5D%0Aclass%20Program--%3E%3Crect%20codeLine%3D%2216%22%20fill%3D%22%23FEFECE%22%20filter%3D%22url(%23f1g2wqou0203l4)%22%20height%3D%2260.8047%22%20id%3D%22Program%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20width%3D%2282%22%20x%3D%22195%22%20y%3D%227%22%2F%3E%3Cellipse%20cx%3D%22210%22%20cy%3D%2223%22%20fill%3D%22%23ADD1B2%22%20rx%3D%2211%22%20ry%3D%2211%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpath%20d%3D%22M212.3438%2C18.6719%20C211.4063%2C18.2344%20210.8125%2C18.0938%20209.9375%2C18.0938%20C207.3125%2C18.0938%20205.3125%2C20.1719%20205.3125%2C22.8906%20L205.3125%2C24.0156%20C205.3125%2C26.5938%20207.4219%2C28.4844%20210.3125%2C28.4844%20C211.5313%2C28.4844%20212.6875%2C28.1875%20213.4375%2C27.6406%20C214.0156%2C27.2344%20214.3438%2C26.7813%20214.3438%2C26.3906%20C214.3438%2C25.9375%20213.9531%2C25.5469%20213.4844%2C25.5469%20C213.2656%2C25.5469%20213.0625%2C25.625%20212.875%2C25.8125%20C212.4219%2C26.2969%20212.4219%2C26.2969%20212.2344%2C26.3906%20C211.8125%2C26.6563%20211.125%2C26.7813%20210.3594%2C26.7813%20C208.3125%2C26.7813%20207.0156%2C25.6875%20207.0156%2C23.9844%20L207.0156%2C22.8906%20C207.0156%2C21.1094%20208.2656%2C19.7969%20210%2C19.7969%20C210.5781%2C19.7969%20211.1875%2C19.9531%20211.6563%2C20.2031%20C212.1406%2C20.4844%20212.3125%2C20.7031%20212.4063%2C21.1094%20C212.4688%2C21.5156%20212.5%2C21.6406%20212.6406%2C21.7656%20C212.7813%2C21.9063%20213.0156%2C22.0156%20213.2344%2C22.0156%20C213.5%2C22.0156%20213.7656%2C21.875%20213.9375%2C21.6563%20C214.0469%2C21.5%20214.0781%2C21.3125%20214.0781%2C20.8906%20L214.0781%2C19.4688%20C214.0781%2C19.0313%20214.0625%2C18.9063%20213.9688%2C18.75%20C213.8125%2C18.4844%20213.5313%2C18.3438%20213.2344%2C18.3438%20C212.9375%2C18.3438%20212.7344%2C18.4375%20212.5156%2C18.75%20L212.3438%2C18.6719%20Z%20%22%20fill%3D%22%23000000%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2250%22%20x%3D%22224%22%20y%3D%2227.1543%22%3EProgram%3C%2Ftext%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22196%22%20x2%3D%22276%22%20y1%3D%2239%22%20y2%3D%2239%22%2F%3E%3Cline%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.5%3B%22%20x1%3D%22196%22%20x2%3D%22276%22%20y1%3D%2247%22%20y2%3D%2247%22%2F%3E%3Cellipse%20cx%3D%22206%22%20cy%3D%2258%22%20fill%3D%22%2384BE84%22%20rx%3D%223%22%20ry%3D%223%22%20style%3D%22stroke%3A%23038048%3Bstroke-width%3A1.0%3B%22%2F%3E%3Ctext%20fill%3D%22%23000000%22%20font-family%3D%22sans-serif%22%20font-size%3D%2211%22%20lengthAdjust%3D%22spacing%22%20textLength%3D%2226%22%20x%3D%22215%22%20y%3D%2261.2104%22%3Erun()%3C%2Ftext%3E%3C!--MD5%3D%5B4e87aa040ef284121415aeccfeaf539e%5D%0Alink%20Building%20to%20Wall--%3E%3Cpath%20codeLine%3D%2221%22%20d%3D%22M229.086%2C171%20C239.058%2C171%20249.031%2C171%20259.003%2C171%20%22%20fill%3D%22none%22%20id%3D%22Building-to-Wall%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22264.218%2C171%2C255.218%2C167%2C259.218%2C171%2C255.218%2C175%2C264.218%2C171%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bf31a499a9bee7df66b9436c63c32fb3f%5D%0Alink%20Program%20to%20Building--%3E%3Cpath%20codeLine%3D%2222%22%20d%3D%22M209.518%2C68.011%20C194.799%2C84.414%20176.153%2C105.193%20159.538%2C123.7096%20%22%20fill%3D%22none%22%20id%3D%22Program-to-Building%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22155.806%2C127.8691%2C164.7939%2C123.8419%2C159.1453%2C124.1477%2C158.8396%2C118.4991%2C155.806%2C127.8691%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bbdd9d5e9af4faaadf47a112ab64cbbb9%5D%0Alink%20Program%20to%20Wall--%3E%3Cpath%20codeLine%3D%2223%22%20d%3D%22M262.482%2C68.011%20C278.789%2C86.185%20299.918%2C109.73%20317.764%2C129.6184%20%22%20fill%3D%22none%22%20id%3D%22Program-to-Wall%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3Cpolygon%20fill%3D%22%23A80036%22%20points%3D%22321.287%2C133.5445%2C318.2532%2C124.1745%2C317.9476%2C129.8231%2C312.299%2C129.5175%2C321.287%2C133.5445%22%20style%3D%22stroke%3A%23A80036%3Bstroke-width%3A1.0%3B%22%2F%3E%3C!--MD5%3D%5Bafffc70170903d5044324463517e48c5%5D%0A%40startuml%0D%0Aclass%20Wall%0D%0A%7B%0D%0A%20%20%2B%20material%3A%20string%0D%0A%0D%0A%20%20%2B%20__construct(string%20material)%0D%0A%7D%0D%0A%0D%0Aclass%20Building%0D%0A%7B%0D%0A%20%20%2B%20name%3A%20string%0D%0A%20%20%2B%20wall%3A%20Wall%0D%0A%0D%0A%20%20%2B%20__construct(Wall%20wall%2C%20string%20name)%0D%0A%7D%0D%0A%0D%0Aclass%20Program%0D%0A%7B%0D%0A%20%20%2B%20run()%0D%0A%7D%0D%0A%0D%0ABuilding-%3EWall%0D%0AProgram-%20-%3EBuilding%0D%0AProgram-%20-%3EWall%0D%0A%40enduml%0D%0A%0APlantUML%20version%201.2021.9beta2(Unknown%20compile%20time)%0A(GPL%20source%20distribution)%0AJava%20Runtime%3A%20Java(TM)%20SE%20Runtime%20Environment%0AJVM%3A%20Java%20HotSpot(TM)%2064-Bit%20Server%20VM%0ADefault%20Encoding%3A%20UTF-8%0ALanguage%3A%20en%0ACountry%3A%20US%0A--%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+
+<p>ʕ •ᴥ•ʔ：若不熟悉 UML 類別圖，可參考<a href="/2020/06/26/Class-Diagram-Description/" title="UML類別圖說明">UML類別圖說明</a>。</p>
+
+        </div>
+        <footer class="article-footer">
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "YNCBearz"
+        },
+        "headline": "類別圖：三隻小豬 （原型模式）",
+        "image": "https://yncbearz.github.io/image/cat-sleeping.jpeg",
+        "keywords": "Class Diagram",
+        "genre": "Design Pattern",
+        "datePublished": "2020-10-11",
+        "dateCreated": "2020-10-11",
+        "dateModified": "2020-10-31",
+        "url": "https://yncbearz.github.io/2020/10/11/Class-Diagram-Three-Little-Pigs-Prototype-Pattern/",
+        "description": "Class Diagram:Three Little Pigs (Prototype Pattern)",
+        "wordCount": 10
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/YNCBearz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com/channel/UClWx47-swj-zud4t8i8E-AA/featured" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="paper-plane" href="mailto:yncbearz@gmail.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-paper-plane"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/10/17/Builder-Pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            建造者模式
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/10/11/Example-Three-Little-Pigs-Prototype-Pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">範例：三隻小豬 （原型模式）</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/seo.jpeg)" alt="107.binary-tree-level-order-traversal-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="title">107.binary-tree-level-order-traversal-ii</a></p>
+                            <p class="item-date"><time datetime="2021-04-22T15:55:42.000Z" itemprop="datePublished">2021-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/11/101-symmetric-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/landscape-paris.jpeg)" alt="101.symmetric-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/11/101-symmetric-tree/" class="title">101.symmetric-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-11T15:31:42.000Z" itemprop="datePublished">2021-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/10/100-same-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/green-tree.jpeg)" alt="100.same-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/10/100-same-tree/" class="title">100.same-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-10T09:18:39.000Z" itemprop="datePublished">2021-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/circular-staircase.jpeg)" alt="95.unique-binary-search-trees-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="title">95.unique-binary-search-trees-ii</a></p>
+                            <p class="item-date"><time datetime="2021-01-22T13:46:43.000Z" itemprop="datePublished">2021-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/14/96-unique-binary-search-trees/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/think-outside-of-the-box.jpeg)" alt="96.unique-binary-search-trees" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/14/96-unique-binary-search-trees/" class="title">96.unique-binary-search-trees</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T15:23:38.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Example/" rel="tag">Example</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Menu/" rel="tag">Menu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/" rel="tag">Note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Principle/" rel="tag">Principle</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/S-O-L-I-D/" rel="tag">S.O.L.I.D</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <!-- <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a> -->
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 YNCBearz</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a
+                        href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+                
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '9bacc98e5d3163bf3752',
+        clientSecret: '567948f000fe871abb4c05f3779b09f1821e759b',
+        id: 'd1bb5c98a12c6da130c81f319a1dbb52',
+        repo: 'yncbearz.github.io',
+        owner: 'YNCBearz',
+        admin: "YNCBearz"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1626319491531')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>

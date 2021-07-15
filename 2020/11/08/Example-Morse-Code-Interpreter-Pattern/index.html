@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head><link rel=manifest href=/manifest.json>
+    <meta charset="utf-8" />
+
+    
+
+
+
+
+<link rel="apple-touch-icon" sizes="512x512" href="/image/icons/512x512.png">
+
+<link rel="apple-touch-icon" sizes="192x192" href="/image/icons/192x192.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/image/icons/180x180.png">
+
+<link rel="apple-touch-icon" sizes="144x144" href="/image/icons/white-bg/144x144.png">
+
+<link rel="apple-touch-icon" sizes="128x128" href="/image/icons/white-bg/128x128.png">
+
+<link rel="apple-touch-icon" sizes="96x96" href="/image/icons/white-bg/96x96.png">
+
+<link rel="apple-touch-icon" sizes="48x48" href="/image/icons/white-bg/48x48.png">
+
+<meta name="msapplication-TileColor" content="#006bde" />
+
+<!-- <meta name="theme-color" content="#006bde" /> -->
+<meta name="theme-color" content="#202124" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="YNCBearz" />
+
+
+    
+    <title>範例：摩斯電碼 （解譯器模式） | YNCBearz</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Example" />
+    
+    <meta name="description" content="Example:Morse Code (Interpreter Pattern)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="範例：摩斯電碼 （解譯器模式）">
+<meta property="og:url" content="https://yncbearz.github.io/2020/11/08/Example-Morse-Code-Interpreter-Pattern/index.html">
+<meta property="og:site_name" content="YNCBearz">
+<meta property="og:description" content="Example:Morse Code (Interpreter Pattern)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yncbearz.github.io/image/investigation.jpeg">
+<meta property="article:published_time" content="2020-11-08T11:24:18.000Z">
+<meta property="article:modified_time" content="2020-12-15T15:05:01.813Z">
+<meta property="article:author" content="YNCBearz">
+<meta property="article:tag" content="Example">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yncbearz.github.io/image/investigation.jpeg">
+    
+
+    
+
+    
+        <link rel="icon" href="/image/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-167983291-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Clean-Code/">Clean Code</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Design-Pattern/">Design Pattern</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Design-Pattern/">Design Pattern</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Example-Morse-Code-Interpreter-Pattern"
+    class="article article-single article-type-post"
+    itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            
+    
+        <h1 class="article-title" itemprop="name">
+        範例：摩斯電碼 （解譯器模式）
+        </h1>
+    
+
+        </header>
+        
+        
+        <div class="article-meta">
+            
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/11/08/Example-Morse-Code-Interpreter-Pattern/" class="article-date">
+         <time datetime="2020-11-08T11:24:18.000Z" itemprop="datePublished">2020-11-08</time>
+      </a>
+    </div>
+
+
+            
+
+            
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Example/" rel="tag">Example</a>
+    </div>
+
+            
+
+            
+
+        </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>Pattern: <a href="/2020/11/04/Interpreter-Pattern/" title="解譯器模式">解譯器模式</a></p>
+<p>Class Diagram: <a href="/2020/11/08/Class-Diagram-Morse-Code-Interpreter-Pattern/" title="摩斯電碼">摩斯電碼</a></p>
+<hr>
+<blockquote>
+<p>情境：讓我們試著作一個摩斯電碼機，它會將一般句子轉成摩斯電碼的表示</p>
+</blockquote>
+<ul>
+<li>首先是語境類別 (Context)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Context</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@var</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> $text;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $text</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(string $text)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;text = $text;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主要是承載要解譯的詞句，<br>會隨著解譯進度，改變其內容。</p>
+<hr>
+<ul>
+<li>接著是表達式類別 (Expression)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Contracts</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Context</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Expression</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 找出要解析的字串執行，並回傳剩餘字串</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> Context $context</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> Context</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">interpret</span><span class="params">(Context $context)</span>: <span class="title">Context</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解析字串後，印在控制台</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $message</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">execute</span><span class="params">(string $message)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這邊說明一下，所謂的摩斯電碼，<br>是利用滴答兩種不同長短訊號的排列組合，<br>來表達每一個字母符號。</p>
+<p>例如：A的表示為 (.-)。</p>
+<p>而在此處的範例中，<br>同個單字的字母會用空格 ( ) 分開，<br>不同單字的字母則會用斜槓 (/) 分開。</p>
+<p>例如：Good Morning的表示會是 (–. — — -.. / – — .-. -. .. -. –.)。</p>
+<p>字母間不區分大小寫。</p>
+<hr>
+<p>按照上述規則，我想區分出兩種表達式 (Expression)。</p>
+<p>解譯字母符號的為**終端表達式 (Terminal Expression)<strong>，<br>其他情況為</strong>非終端表達式 (NonTerminal Expression)**。</p>
+<p>想法是使用非終端表達式時，表示還有字需要解譯。</p>
+<hr>
+<ul>
+<li>實作非終端表達式 (NonTerminal Expression)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Contracts</span>\<span class="title">Expression</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Context</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NonTerminalExpression</span> <span class="keyword">implements</span> <span class="title">Expression</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">interpret</span><span class="params">(Context $context)</span>: <span class="title">Context</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $head = <span class="string">' '</span>;</span><br><span class="line">        $context-&gt;text = trim($context-&gt;text);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">$this</span>-&gt;execute($head);</span><br><span class="line">        <span class="keyword">return</span> $context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $message</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">execute</span><span class="params">(string $message)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">' / '</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $character</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> boolean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">isSpace</span><span class="params">($character)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $character == <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此處interpret()方法會將目前解譯到的詞句，去除前後空白。<br>execute()方法則會印出斜槓 (/)。</p>
+<p>而isSpace()方法，會在待會的客戶端程式碼用到。</p>
+<hr>
+<ul>
+<li>實作終端表達式 (Terminal Expression)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Contracts</span>\<span class="title">Expression</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Context</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Exceptions</span>\<span class="title">UndefinedTextException</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TerminalExpression</span> <span class="keyword">implements</span> <span class="title">Expression</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> $mapping = [</span><br><span class="line">        <span class="string">'a'</span> =&gt; <span class="string">'.-'</span>,</span><br><span class="line">        <span class="string">'b'</span> =&gt; <span class="string">'-...'</span>,</span><br><span class="line">        <span class="string">'c'</span> =&gt; <span class="string">'-.-.'</span>,</span><br><span class="line">        <span class="string">'d'</span> =&gt; <span class="string">'-..'</span>,</span><br><span class="line">        <span class="string">'e'</span> =&gt; <span class="string">'.'</span>,</span><br><span class="line">        <span class="string">'f'</span> =&gt; <span class="string">'..-.'</span>,</span><br><span class="line">        <span class="string">'g'</span> =&gt; <span class="string">'--.'</span>,</span><br><span class="line">        <span class="string">'h'</span> =&gt; <span class="string">'....'</span>,</span><br><span class="line">        <span class="string">'i'</span> =&gt; <span class="string">'..'</span>,</span><br><span class="line">        <span class="string">'j'</span> =&gt; <span class="string">'.---'</span>,</span><br><span class="line">        <span class="string">'k'</span> =&gt; <span class="string">'-.-'</span>,</span><br><span class="line">        <span class="string">'l'</span> =&gt; <span class="string">'.-..'</span>,</span><br><span class="line">        <span class="string">'m'</span> =&gt; <span class="string">'--'</span>,</span><br><span class="line">        <span class="string">'n'</span> =&gt; <span class="string">'-.'</span>,</span><br><span class="line">        <span class="string">'o'</span> =&gt; <span class="string">'---'</span>,</span><br><span class="line">        <span class="string">'p'</span> =&gt; <span class="string">'.--.'</span>,</span><br><span class="line">        <span class="string">'q'</span> =&gt; <span class="string">'--.-'</span>,</span><br><span class="line">        <span class="string">'r'</span> =&gt; <span class="string">'.-.'</span>,</span><br><span class="line">        <span class="string">'s'</span> =&gt; <span class="string">'...'</span>,</span><br><span class="line">        <span class="string">'t'</span> =&gt; <span class="string">'-'</span>,</span><br><span class="line">        <span class="string">'u'</span> =&gt; <span class="string">'..-'</span>,</span><br><span class="line">        <span class="string">'v'</span> =&gt; <span class="string">'...-'</span>,</span><br><span class="line">        <span class="string">'w'</span> =&gt; <span class="string">'.--'</span>,</span><br><span class="line">        <span class="string">'x'</span> =&gt; <span class="string">'-..-'</span>,</span><br><span class="line">        <span class="string">'y'</span> =&gt; <span class="string">'-.--'</span>,</span><br><span class="line">        <span class="string">'z'</span> =&gt; <span class="string">'--..'</span>,</span><br><span class="line">        <span class="string">'0'</span> =&gt; <span class="string">'-----'</span>,</span><br><span class="line">        <span class="string">'1'</span> =&gt; <span class="string">'.----'</span>,</span><br><span class="line">        <span class="string">'2'</span> =&gt; <span class="string">'..---'</span>,</span><br><span class="line">        <span class="string">'3'</span> =&gt; <span class="string">'...--'</span>,</span><br><span class="line">        <span class="string">'4'</span> =&gt; <span class="string">'....-'</span>,</span><br><span class="line">        <span class="string">'5'</span> =&gt; <span class="string">'.....'</span>,</span><br><span class="line">        <span class="string">'6'</span> =&gt; <span class="string">'-....'</span>,</span><br><span class="line">        <span class="string">'7'</span> =&gt; <span class="string">'--...'</span>,</span><br><span class="line">        <span class="string">'8'</span> =&gt; <span class="string">'---..'</span>,</span><br><span class="line">        <span class="string">'9'</span> =&gt; <span class="string">'----.'</span>,</span><br><span class="line">        <span class="string">'.'</span> =&gt; <span class="string">'.-.-.-'</span>,</span><br><span class="line">        <span class="string">','</span> =&gt; <span class="string">'--..--'</span>,</span><br><span class="line">        <span class="string">'?'</span> =&gt; <span class="string">'..--..'</span>,</span><br><span class="line">        <span class="string">'/'</span> =&gt; <span class="string">'-..-.'</span>,</span><br><span class="line">        <span class="string">"'"</span> =&gt; <span class="string">'.----.'</span>,</span><br><span class="line">        <span class="string">'!'</span> =&gt; <span class="string">'-.-.--'</span>,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">interpret</span><span class="params">(Context $context)</span>: <span class="title">Context</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $firstSpacePos = strpos($context-&gt;text, <span class="string">' '</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($firstSpacePos) &#123;</span><br><span class="line">            $head = substr($context-&gt;text, <span class="number">0</span>, $firstSpacePos);</span><br><span class="line">            $context-&gt;text = substr($context-&gt;text, $firstSpacePos);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $head = $context-&gt;text;</span><br><span class="line">            $context-&gt;text = <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">$this</span>-&gt;execute($head);</span><br><span class="line">        <span class="keyword">return</span> $context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $message</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">execute</span><span class="params">(string $message)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $characters = str_split($message);</span><br><span class="line">        $lastKey = array_key_last($characters);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> ($characters <span class="keyword">as</span> $key =&gt; $character) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;encode($character);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ($key == $lastKey) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">$this</span>-&gt;typeSpace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $character</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">encode</span><span class="params">(string $character)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $character = strtolower($character);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!array_key_exists($character, <span class="keyword">$this</span>-&gt;mapping)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> UndefinedTextException();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;mapping[$character];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">typeSpace</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此處interpret()方法會找出要解譯的單字，並截斷它。<br>execute()方法則會逐步印出單字中的每一個字母符號，彼此間以空格隔開。</p>
+<hr>
+<ul>
+<li>實作客戶端的程式碼</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">NonTerminalExpression</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">TerminalExpression</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">App</span>\<span class="title">InterpreterPattern</span>\<span class="title">MorseCode</span>\<span class="title">Context</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@var</span> TerminalExpression</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> $terminalExpression;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@var</span> NonTerminalExpression</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> $nonTerminalExpression;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;terminalExpression = <span class="keyword">new</span> TerminalExpression();</span><br><span class="line">        <span class="keyword">$this</span>-&gt;nonTerminalExpression = <span class="keyword">new</span> NonTerminalExpression();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $text</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">encode</span><span class="params">(string $text)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            $context = <span class="keyword">new</span> Context(trim($text));</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (strlen($context-&gt;text) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                $firstCharacter = substr($context-&gt;text, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;nonTerminalExpression-&gt;isSpace($firstCharacter)) &#123;</span><br><span class="line">                    $context = <span class="keyword">$this</span>-&gt;nonTerminalExpression-&gt;interpret($context);</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                $context = <span class="keyword">$this</span>-&gt;terminalExpression-&gt;interpret($context);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (\Throwable $th) &#123;</span><br><span class="line">            <span class="keyword">throw</span> $th;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最後讓我們來看客戶端程式碼怎麼跑吧！</p>
+<p>以Hello World為例：</p>
+<ol>
+<li>首先會將Hello World轉成**語境類別 (Context)**。</li>
+<li><strong>終端表達式 (Terminal Expression)</strong> 會截取出Hello這個單字，印出它的摩斯電碼。</li>
+<li><strong>非終端表達式 (NonTerminal Expression)</strong> 則會去除空白，印出斜槓 (/)。</li>
+<li><strong>終端表達式 (Terminal Expression)</strong> 會截取出World這個單字，印出它的摩斯電碼。</li>
+<li>客戶端程式碼判斷解譯完成，結束迴圈。</li>
+</ol>
+<hr>
+<p><strong>[<a href="/2020/05/28/Single-Responsibility-Principle/" title="單一職責原則">單一職責原則</a>]</strong><br>**語境類別 (Context)**：負責乘載要解譯的詞句。<br><strong>非終端表達式 (NonTerminal Expression)<strong>：負責</strong>連結</strong>解譯單字間的文法。<br>**終端表達式 (Terminal Expression)**：負責解譯每一個字母符號。</p>
+<p><strong>[<a href="/2020/05/30/Open-Close-Principle/" title="開放封閉原則">開放封閉原則</a>]</strong><br>增加要轉譯的字母符號時，僅需修改<strong>終端表達式 (Terminal Expression)。</strong></p>
+<p><strong>[<a href="/2020/06/08/Dependency-Inversion-Principle/" title="依賴反轉原則">依賴反轉原則</a>]</strong><br>透過<strong>表達式 (Expression)</strong> 接口，<br>確保各個表達式都有interpret()方法與execute()方法。</p>
+<hr>
+<p>現實中幾乎沒有機會使用到的設計模式，<br>範例想了很多天，希望這樣有傳達出這個模式的精神！</p>
+<p>另外這個範例還沒有完成decode()方法，<br>也就是從摩斯電碼轉回一般句子。</p>
+<p>之後有時間會試著實作看看。</p>
+<p>ʕ •ᴥ•ʔ：目前心目中前三難的設計模式。</p>
+
+        </div>
+        <footer class="article-footer">
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "YNCBearz"
+        },
+        "headline": "範例：摩斯電碼 （解譯器模式）",
+        "image": "https://yncbearz.github.io/image/investigation.jpeg",
+        "keywords": "Example",
+        "genre": "Design Pattern",
+        "datePublished": "2020-11-08",
+        "dateCreated": "2020-11-08",
+        "dateModified": "2020-12-15",
+        "url": "https://yncbearz.github.io/2020/11/08/Example-Morse-Code-Interpreter-Pattern/",
+        "description": "Example:Morse Code (Interpreter Pattern)",
+        "wordCount": 2350
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/YNCBearz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube" href="https://www.youtube.com/channel/UClWx47-swj-zud4t8i8E-AA/featured" target="_blank" rel="noopener">
+                        <i class="icon fa fa-youtube"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="paper-plane" href="mailto:yncbearz@gmail.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-paper-plane"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/11/08/Class-Diagram-Morse-Code-Interpreter-Pattern/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            類別圖：摩斯電碼 （解譯器模式）
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/11/04/Interpreter-Pattern/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">解譯器模式</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/seo.jpeg)" alt="107.binary-tree-level-order-traversal-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/22/107-binary-tree-level-order-traversal-ii/" class="title">107.binary-tree-level-order-traversal-ii</a></p>
+                            <p class="item-date"><time datetime="2021-04-22T15:55:42.000Z" itemprop="datePublished">2021-04-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/11/101-symmetric-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/landscape-paris.jpeg)" alt="101.symmetric-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/11/101-symmetric-tree/" class="title">101.symmetric-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-11T15:31:42.000Z" itemprop="datePublished">2021-04-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/04/10/100-same-tree/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/green-tree.jpeg)" alt="100.same-tree" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/04/10/100-same-tree/" class="title">100.same-tree</a></p>
+                            <p class="item-date"><time datetime="2021-04-10T09:18:39.000Z" itemprop="datePublished">2021-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/circular-staircase.jpeg)" alt="95.unique-binary-search-trees-ii" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/22/95-unique-binary-search-trees-ii/" class="title">95.unique-binary-search-trees-ii</a></p>
+                            <p class="item-date"><time datetime="2021-01-22T13:46:43.000Z" itemprop="datePublished">2021-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/01/14/96-unique-binary-search-trees/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/think-outside-of-the-box.jpeg)" alt="96.unique-binary-search-trees" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2021/01/14/96-unique-binary-search-trees/" class="title">96.unique-binary-search-trees</a></p>
+                            <p class="item-date"><time datetime="2021-01-14T15:23:38.000Z" itemprop="datePublished">2021-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class-Diagram/" rel="tag">Class Diagram</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Example/" rel="tag">Example</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Menu/" rel="tag">Menu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/" rel="tag">Note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Principle/" rel="tag">Principle</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/S-O-L-I-D/" rel="tag">S.O.L.I.D</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <!-- <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a> -->
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 YNCBearz</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a
+                        href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+                
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '9bacc98e5d3163bf3752',
+        clientSecret: '567948f000fe871abb4c05f3779b09f1821e759b',
+        id: 'fc420d2ea63fea27f4ae67036b33075a',
+        repo: 'yncbearz.github.io',
+        owner: 'YNCBearz',
+        admin: "YNCBearz"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1626319491531')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>
