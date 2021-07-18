@@ -48,7 +48,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yncbearz.github.io/image/sign.jpeg">
 <meta property="article:published_time" content="2020-12-11T14:16:08.000Z">
-<meta property="article:modified_time" content="2020-12-12T14:34:34.961Z">
+<meta property="article:modified_time" content="2021-07-18T13:30:16.130Z">
 <meta property="article:author" content="YNCBearz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yncbearz.github.io/image/sign.jpeg">
@@ -239,13 +239,13 @@ ga('send', 'pageview');
 
             <h2 id="Chain-Of-Responsibility-Pattern"><a href="#Chain-Of-Responsibility-Pattern" class="headerlink" title="Chain Of Responsibility Pattern"></a><strong>Chain Of Responsibility Pattern</strong></h2><h3 id="使多個物件都有機會處理請求，"><a href="#使多個物件都有機會處理請求，" class="headerlink" title="使多個物件都有機會處理請求，"></a>使多個物件都有機會處理請求，</h3><h3 id="從而避免請求的發送者和接受者間的耦合關係。"><a href="#從而避免請求的發送者和接受者間的耦合關係。" class="headerlink" title="從而避免請求的發送者和接受者間的耦合關係。"></a>從而避免請求的發送者和接受者間的耦合關係。</h3><h3 id="請求會沿著這條鏈傳遞，直到有一個物件處理它。"><a href="#請求會沿著這條鏈傳遞，直到有一個物件處理它。" class="headerlink" title="請求會沿著這條鏈傳遞，直到有一個物件處理它。"></a>請求會沿著這條鏈傳遞，直到有一個物件處理它。</h3><p>Example: <a href="/2020/12/11/Example-Software-Chain-Of-Responsibility-Pattern/" title="新產品開發">新產品開發</a></p>
 <hr>
-<p>職責鏈模式會將類別分為兩類：<br>分別是**請求類別 (Request)<strong>與</strong>處理器類別 (Handler)**。</p>
+<p>職責鏈模式會將類別分為兩類：<br>分別是<strong>請求類別 (Request)</strong> 與 <strong>處理器類別 (Handler)</strong> 。</p>
 <hr>
 <p><strong>優點</strong>：<br>容易調整職責鏈中處理器的順序。<br>容易新增/修改職責鏈中的處理器。</p>
 <p><strong>缺點</strong>：<br>需注意是否有請求到鏈的末端仍未被處理。</p>
 <hr>
 <h4 id="與其他模式的比較："><a href="#與其他模式的比較：" class="headerlink" title="與其他模式的比較："></a>與其他模式的比較：</h4><p><strong>[<a href="/2020/07/12/Decorator-Pattern/" title="裝飾者模式">裝飾者模式</a>]：</strong><br>裝飾者模式中，每個裝飾者類別<strong>皆會</strong>裝飾被裝飾者類別。<br>而職責鏈模式中的請求，<strong>只會</strong>交由一個處理器負責處理。</p>
-<p><strong>[<a href="/2020/11/15/Composite-Pattern/" title="組合模式">組合模式</a>]：</strong><br>職責鏈模式中的處理器類別，會實現相同的介面，<br>最後形成類似**枝節點類別 (Composite)<strong>與</strong>葉節點類別 (Leaf)**的結構。</p>
+<p><strong>[<a href="/2020/11/15/Composite-Pattern/" title="組合模式">組合模式</a>]：</strong><br>職責鏈模式中的處理器類別，會實現相同的介面，<br>最後形成類似<strong>枝節點類別 (Composite)</strong> 與 <strong>葉節點類別 (Leaf)</strong> 的結構。</p>
 <hr>
 <p>ʕ •ᴥ•ʔ：透過類似<a href="/2020/07/20/Command-Pattern/" title="命令模式">命令模式</a>的職責切分，<br>將處理器的職責與鏈的職責解耦，使其易於新增/修改。</p>
 
@@ -267,10 +267,10 @@ ga('send', 'pageview');
         "genre": "Design Pattern",
         "datePublished": "2020-12-11",
         "dateCreated": "2020-12-11",
-        "dateModified": "2020-12-12",
+        "dateModified": "2021-07-18",
         "url": "https://yncbearz.github.io/2020/12/11/Chain-Of-Responsibility-Pattern/",
         "description": "Chain Of Responsibility Pattern",
-        "wordCount": 41
+        "wordCount": 47
     }
 </script>
 
@@ -580,7 +580,7 @@ ga('send', 'pageview');
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1626321736620')
+  navigator.serviceWorker.register('/sw.js?t=1626615176009')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

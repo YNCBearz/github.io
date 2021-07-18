@@ -48,7 +48,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yncbearz.github.io/image/petal.jpeg">
 <meta property="article:published_time" content="2020-11-15T15:16:08.000Z">
-<meta property="article:modified_time" content="2020-11-18T14:38:06.783Z">
+<meta property="article:modified_time" content="2021-07-18T13:31:32.459Z">
 <meta property="article:author" content="YNCBearz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yncbearz.github.io/image/petal.jpeg">
@@ -239,15 +239,15 @@ ga('send', 'pageview');
 
             <h2 id="Composite-Pattern"><a href="#Composite-Pattern" class="headerlink" title="Composite Pattern"></a><strong>Composite Pattern</strong></h2><h3 id="允許將對象組合成樹形結構來表現整體-部分層次結構。"><a href="#允許將對象組合成樹形結構來表現整體-部分層次結構。" class="headerlink" title="允許將對象組合成樹形結構來表現整體/部分層次結構。"></a>允許將對象組合成樹形結構來表現整體/部分層次結構。</h3><h3 id="組合能讓客戶以一致的方式處理個別對象以及對象組合。"><a href="#組合能讓客戶以一致的方式處理個別對象以及對象組合。" class="headerlink" title="組合能讓客戶以一致的方式處理個別對象以及對象組合。"></a>組合能讓客戶以一致的方式處理個別對象以及對象組合。</h3><p>Example: <a href="/2020/11/15/Example-Taxonomy-Composite-Pattern/" title="生物分類學">生物分類學</a></p>
 <hr>
-<p>組合模式會將類別分為兩類：<br>分別是**枝節點類別 (Composite)<strong>與</strong>葉節點類別 (Leaf)**。</p>
+<p>組合模式會將類別分為兩類：<br>分別是<strong>枝節點類別 (Composite)</strong> 與 <strong>葉節點類別 (Leaf)</strong> 。</p>
 <p>其中葉節點類別沒有子節點。</p>
 <hr>
-<p>根據**組合介面 (Component)**設計的不同，又可分出兩種類型。</p>
+<p>根據<strong>組合介面 (Component)</strong> 設計的不同，又可分出兩種類型。</p>
 <ul>
-<li><strong>透明方式 (uniformity)</strong><br>於介面宣告管理子物件的方法 (Add, Remove)，<br>使得**枝節點類別 (Composite)<strong>與</strong>葉節點類別 (Leaf)<strong>沒有區別。<br>缺點為</strong>葉節點類別 (Leaf)**本身不具備管理子物件的方法，實現它是沒有意義的。</li>
+<li><strong>透明方式 (uniformity)</strong><br>於介面宣告管理子物件的方法 (Add, Remove)，<br>使得 <strong>枝節點類別 (Composite)</strong> 與 <strong>葉節點類別 (Leaf)</strong> 沒有區別。<br>缺點為 <strong>葉節點類別 (Leaf)</strong> 本身不具備管理子物件的方法，實現它是沒有意義的。</li>
 </ul>
 <ul>
-<li><strong>安全方式 (type safety)</strong><br>不於介面宣告管理子物件的方法，而是在**枝節點類別 (Composite)**中宣告。<br>缺點為客戶端調用時須增加對應的判斷。</li>
+<li><strong>安全方式 (type safety)</strong><br>不於介面宣告管理子物件的方法，而是在 <strong>枝節點類別 (Composite)</strong> 中宣告。<br>缺點為客戶端調用時須增加對應的判斷。</li>
 </ul>
 <hr>
 <p><strong>優點</strong>：<br>面對樹形架構時，能夠使用<strong>多態性</strong>與<strong>遞迴性</strong>的作法。</p>
@@ -293,10 +293,10 @@ ga('send', 'pageview');
         "genre": "Design Pattern",
         "datePublished": "2020-11-15",
         "dateCreated": "2020-11-15",
-        "dateModified": "2020-11-18",
+        "dateModified": "2021-07-18",
         "url": "https://yncbearz.github.io/2020/11/15/Composite-Pattern/",
         "description": "Composite Pattern",
-        "wordCount": 53
+        "wordCount": 65
     }
 </script>
 
@@ -606,7 +606,7 @@ ga('send', 'pageview');
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1626321736620')
+  navigator.serviceWorker.register('/sw.js?t=1626615176009')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
