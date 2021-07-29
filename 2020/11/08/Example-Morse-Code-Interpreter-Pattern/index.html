@@ -48,7 +48,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yncbearz.github.io/image/investigation.jpeg">
 <meta property="article:published_time" content="2020-11-08T11:24:18.000Z">
-<meta property="article:modified_time" content="2020-12-15T15:05:01.813Z">
+<meta property="article:modified_time" content="2021-07-29T15:47:21.352Z">
 <meta property="article:author" content="YNCBearz">
 <meta property="article:tag" content="Example">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@ ga('send', 'pageview');
 <p>字母間不區分大小寫。</p>
 <hr>
 <p>按照上述規則，我想區分出兩種表達式 (Expression)。</p>
-<p>解譯字母符號的為**終端表達式 (Terminal Expression)<strong>，<br>其他情況為</strong>非終端表達式 (NonTerminal Expression)**。</p>
+<p>解譯字母符號的為<strong>終端表達式 (Terminal Expression)</strong> ，<br>其他情況為<strong>非終端表達式 (NonTerminal Expression)</strong> 。</p>
 <p>想法是使用非終端表達式時，表示還有字需要解譯。</p>
 <hr>
 <ul>
@@ -294,14 +294,14 @@ ga('send', 'pageview');
 <p>最後讓我們來看客戶端程式碼怎麼跑吧！</p>
 <p>以Hello World為例：</p>
 <ol>
-<li>首先會將Hello World轉成**語境類別 (Context)**。</li>
+<li>首先會將Hello World轉成<strong>語境類別 (Context)</strong> 。</li>
 <li><strong>終端表達式 (Terminal Expression)</strong> 會截取出Hello這個單字，印出它的摩斯電碼。</li>
 <li><strong>非終端表達式 (NonTerminal Expression)</strong> 則會去除空白，印出斜槓 (/)。</li>
 <li><strong>終端表達式 (Terminal Expression)</strong> 會截取出World這個單字，印出它的摩斯電碼。</li>
 <li>客戶端程式碼判斷解譯完成，結束迴圈。</li>
 </ol>
 <hr>
-<p><strong>[<a href="/2020/05/28/Single-Responsibility-Principle/" title="單一職責原則">單一職責原則</a>]</strong><br>**語境類別 (Context)**：負責乘載要解譯的詞句。<br><strong>非終端表達式 (NonTerminal Expression)<strong>：負責</strong>連結</strong>解譯單字間的文法。<br>**終端表達式 (Terminal Expression)**：負責解譯每一個字母符號。</p>
+<p><strong>[<a href="/2020/05/28/Single-Responsibility-Principle/" title="單一職責原則">單一職責原則</a>]</strong><br><strong>語境類別 (Context)</strong> ：負責乘載要解譯的詞句。<br><strong>非終端表達式 (NonTerminal Expression)</strong> ：負責<strong>連結</strong>解譯單字間的文法。<br><strong>終端表達式 (Terminal Expression)</strong> ：負責解譯每一個字母符號。</p>
 <p><strong>[<a href="/2020/05/30/Open-Close-Principle/" title="開放封閉原則">開放封閉原則</a>]</strong><br>增加要轉譯的字母符號時，僅需修改<strong>終端表達式 (Terminal Expression)。</strong></p>
 <p><strong>[<a href="/2020/06/08/Dependency-Inversion-Principle/" title="依賴反轉原則">依賴反轉原則</a>]</strong><br>透過<strong>表達式 (Expression)</strong> 接口，<br>確保各個表達式都有interpret()方法與execute()方法。</p>
 <hr>
@@ -328,10 +328,10 @@ ga('send', 'pageview');
         "genre": "Design Pattern",
         "datePublished": "2020-11-08",
         "dateCreated": "2020-11-08",
-        "dateModified": "2020-12-15",
+        "dateModified": "2021-07-29",
         "url": "https://yncbearz.github.io/2020/11/08/Example-Morse-Code-Interpreter-Pattern/",
         "description": "Example:Morse Code (Interpreter Pattern)",
-        "wordCount": 2350
+        "wordCount": 2356
     }
 </script>
 
@@ -641,7 +641,7 @@ ga('send', 'pageview');
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1626866700476')
+  navigator.serviceWorker.register('/sw.js?t=1627573895537')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

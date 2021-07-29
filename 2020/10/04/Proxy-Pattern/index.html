@@ -48,7 +48,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yncbearz.github.io/image/agent.jpeg">
 <meta property="article:published_time" content="2020-10-04T12:13:02.000Z">
-<meta property="article:modified_time" content="2020-11-18T14:40:56.596Z">
+<meta property="article:modified_time" content="2021-07-29T15:38:16.323Z">
 <meta property="article:author" content="YNCBearz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yncbearz.github.io/image/agent.jpeg">
@@ -237,12 +237,12 @@ ga('send', 'pageview');
 
             
 
-            <h2 id="Proxy-Pattern"><a href="#Proxy-Pattern" class="headerlink" title="Proxy Pattern"></a><strong>Proxy Pattern</strong></h2><h3 id="為另一個對象提供一個替身或佔位符以控制這個對象的訪問。"><a href="#為另一個對象提供一個替身或佔位符以控制這個對象的訪問。" class="headerlink" title="為另一個對象提供一個替身或佔位符以控制這個對象的訪問。"></a>為另一個對象提供一個<strong>替身</strong>或<strong>佔位符</strong>以<strong>控制這個對象的訪問</strong>。</h3><p>Example: <a href="/2020/10/04/Example-Cache-Proxy-Pattern/" title="快取代理">快取代理</a></p>
+            <h2 id="Proxy-Pattern"><a href="#Proxy-Pattern" class="headerlink" title="Proxy Pattern"></a>Proxy Pattern</h2><h3 id="為另一個對象提供一個替身或佔位符以控制這個對象的訪問。"><a href="#為另一個對象提供一個替身或佔位符以控制這個對象的訪問。" class="headerlink" title="為另一個對象提供一個替身或佔位符以控制這個對象的訪問。"></a>為另一個對象提供一個替身或佔位符以控制這個對象的訪問。</h3><p>Example: <a href="/2020/10/04/Example-Cache-Proxy-Pattern/" title="快取代理">快取代理</a></p>
 <hr>
-<p>代理模式將類別分為兩類：<br>分別是**實體類別 (RealSubject)<strong>與</strong>代理類別 (Proxy)**。</p>
+<p>代理模式將類別分為兩類：<br>分別是 <strong>實體類別 (RealSubject)</strong> 與 <strong>代理類別 (Proxy)</strong> 。</p>
 <p><strong>代理類別</strong>會與<strong>實體類別</strong>實現<strong>相同的介面</strong>，<br>且<strong>保存</strong>對實體類別的引用。</p>
 <hr>
-<p><strong>優點</strong>：<br>控制訪問的職責，不必寫在實體類別。<br>有了代理類別，可以**延遲實例化 (lazy initialization)**實體類別。<br>可以有多種控制訪問實體類別的方式。<br>可以在實體類別被訪問時，做一些額外的事（不屬於實體類別的職責）。</p>
+<p><strong>優點</strong>：<br>控制訪問的職責，不必寫在實體類別。<br>有了代理類別，可以 <strong>延遲實例化 (lazy initialization)</strong> 實體類別。<br>可以有多種控制訪問實體類別的方式。<br>可以在實體類別被訪問時，做一些額外的事（不屬於實體類別的職責）。</p>
 <p><strong>缺點</strong>：<br>程式碼複雜度提高。<br>回應可能會有所延遲。</p>
 <hr>
 <h4 id="與其他模式的比較："><a href="#與其他模式的比較：" class="headerlink" title="與其他模式的比較："></a>與其他模式的比較：</h4><p><strong>[<a href="/2020/08/09/Adapter-Pattern/" title="轉接頭模式">轉接頭模式</a>]：</strong><br>轉接頭模式只負責<strong>轉化</strong>不同介面間的關係。<br>而代理模式則是<strong>實現相同的介面</strong>，處理更多<strong>訪問</strong>相關的職責。</p>
@@ -276,10 +276,10 @@ ga('send', 'pageview');
         "genre": "Design Pattern",
         "datePublished": "2020-10-04",
         "dateCreated": "2020-10-04",
-        "dateModified": "2020-11-18",
+        "dateModified": "2021-07-29",
         "url": "https://yncbearz.github.io/2020/10/04/Proxy-Pattern/",
         "description": "Proxy Pattern",
-        "wordCount": 29
+        "wordCount": 35
     }
 </script>
 
@@ -589,7 +589,7 @@ ga('send', 'pageview');
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1626866700476')
+  navigator.serviceWorker.register('/sw.js?t=1627573895537')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

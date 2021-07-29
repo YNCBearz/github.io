@@ -48,7 +48,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yncbearz.github.io/image/super-mario.jpeg">
 <meta property="article:published_time" content="2020-10-17T07:48:51.000Z">
-<meta property="article:modified_time" content="2020-10-17T08:44:12.625Z">
+<meta property="article:modified_time" content="2021-07-29T15:41:05.997Z">
 <meta property="article:author" content="YNCBearz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yncbearz.github.io/image/super-mario.jpeg">
@@ -239,7 +239,7 @@ ga('send', 'pageview');
 
             <h2 id="Builder-Pattern"><a href="#Builder-Pattern" class="headerlink" title="Builder Pattern"></a><strong>Builder Pattern</strong></h2><h3 id="將複雜對象的構建與其表示分離。"><a href="#將複雜對象的構建與其表示分離。" class="headerlink" title="將複雜對象的構建與其表示分離。"></a>將複雜對象的構建與其表示<strong>分離</strong>。</h3><p>Example: <a href="/2020/10/17/Example-Vacation-Builder-Pattern/" title="假期規劃">假期規劃</a></p>
 <hr>
-<p>建造者模式會將類別分為三類：<br>分別是<strong>指揮者類別 (Director)<strong>、</strong>建造者類別 (Builder)</strong> 與 **產品類別 (Product)**。</p>
+<p>建造者模式會將類別分為三類：<br>分別是<strong>指揮者類別 (Director)<strong>、</strong>建造者類別 (Builder)</strong> 與 <strong>產品類別 (Product)</strong> 。</p>
 <p>通常會透過指揮者來決定建造過程。<br>有時侯會省略指揮者，改由客戶端直接決定建造過程。</p>
 <hr>
 <p><strong>優點</strong>：<br>可以按<strong>步驟</strong>，一步步地創建出物件。<br>將創建物件的邏輯與物件本身的邏輯分離。</p>
@@ -248,7 +248,7 @@ ga('send', 'pageview');
 <h4 id="與其他模式的比較："><a href="#與其他模式的比較：" class="headerlink" title="與其他模式的比較："></a>與其他模式的比較：</h4><p><strong>[<a href="/2020/08/30/Factory-Method-Pattern/" title="工廠方法模式">工廠方法模式</a>]：</strong><br>工廠方法模式中，不同分類的產品都有了對應的工廠。<br>每個不同的選擇都是<strong>物件層級</strong>。</p>
 <p>建造者模式中，分離了建造者與產品。<br>每個不同的選擇都是<strong>步驟層級</strong>。</p>
 <hr>
-<p>而建造者模式常常會搭配**流式接口 (Fluent Interface)<strong>的寫作風格。<br>流式接口通常依賴於</strong>方法鏈 (Method Chaining)**。</p>
+<p>而建造者模式常常會搭配<strong>流式接口 (Fluent Interface)</strong> 的寫作風格。<br>流式接口通常依賴於<strong>方法鏈 (Method Chaining)</strong> 。</p>
 <p>藉由每個方法都回傳物件本身，來增加程式的<strong>可讀性</strong>。</p>
 <p>ʕ •ᴥ•ʔ：Laravel中的<strong>query builder</strong>，用的就是建造者模式的概念。</p>
 
@@ -270,10 +270,10 @@ ga('send', 'pageview');
         "genre": "Design Pattern",
         "datePublished": "2020-10-17",
         "dateCreated": "2020-10-17",
-        "dateModified": "2020-10-17",
+        "dateModified": "2021-07-29",
         "url": "https://yncbearz.github.io/2020/10/17/Builder-Pattern/",
         "description": "Builder Pattern",
-        "wordCount": 31
+        "wordCount": 34
     }
 </script>
 
@@ -583,7 +583,7 @@ ga('send', 'pageview');
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1626866700476')
+  navigator.serviceWorker.register('/sw.js?t=1627573895537')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

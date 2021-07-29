@@ -48,7 +48,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yncbearz.github.io/image/glass-cells.jpeg">
 <meta property="article:published_time" content="2020-10-11T14:37:18.000Z">
-<meta property="article:modified_time" content="2020-10-30T17:01:29.229Z">
+<meta property="article:modified_time" content="2021-07-29T15:39:20.050Z">
 <meta property="article:author" content="YNCBearz">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yncbearz.github.io/image/glass-cells.jpeg">
@@ -239,10 +239,10 @@ ga('send', 'pageview');
 
             <h2 id="Prototype-Pattern"><a href="#Prototype-Pattern" class="headerlink" title="Prototype Pattern"></a><strong>Prototype Pattern</strong></h2><h3 id="當創建實例的過程很昂貴或複雜時，透過拷貝這些原型來建立新的實例。"><a href="#當創建實例的過程很昂貴或複雜時，透過拷貝這些原型來建立新的實例。" class="headerlink" title="當創建實例的過程很昂貴或複雜時，透過拷貝這些原型來建立新的實例。"></a>當創建實例的過程很昂貴或複雜時，透過拷貝這些原型來建立新的實例。</h3><p>Example: <a href="/2020/10/11/Example-Three-Little-Pigs-Prototype-Pattern/" title="三隻小豬">三隻小豬</a></p>
 <hr>
-<p>原型模式中會將類別分為兩類：<br>分別是<strong>原型介面 (Prototype)</strong> 及**具體原型類別 (Concrete Prototype)**。</p>
-<p>透過原型介面，我們可以知道該實例能**拷貝 (clone)**，複製出自己的實例。</p>
+<p>原型模式中會將類別分為兩類：<br>分別是<strong>原型介面 (Prototype)</strong> 及 <strong>具體原型類別 (Concrete Prototype)</strong> 。</p>
+<p>透過原型介面，我們可以知道該實例能<strong>拷貝 (clone)</strong> ，複製出自己的實例。</p>
 <hr>
-<p>其中拷貝又可分為兩種：<br>分別是<strong>淺複製 (Shallow Copy)</strong> 與**深複製 (Deep Copy)**。</p>
+<p>其中拷貝又可分為兩種：<br>分別是<strong>淺複製 (Shallow Copy)</strong> 與 <strong>深複製 (Deep Copy)</strong> 。</p>
 <p>兩者的差別在於，當原型類別的屬性為<strong>參考類型 (references)</strong> 時，<br>淺複製會指向與實例一樣的位址，<strong>不會重新創建屬性</strong>。<br>深複製則會<strong>重新創建屬性</strong>。</p>
 <p>這意味著，當使用淺複製時，<br>修改參考類型的屬性會<strong>一併修改</strong>到原本實例。</p>
 <hr>
@@ -271,10 +271,10 @@ ga('send', 'pageview');
         "genre": "Design Pattern",
         "datePublished": "2020-10-11",
         "dateCreated": "2020-10-11",
-        "dateModified": "2020-10-31",
+        "dateModified": "2021-07-29",
         "url": "https://yncbearz.github.io/2020/10/11/Prototype-Pattern/",
         "description": "Prototype Pattern",
-        "wordCount": 37
+        "wordCount": 42
     }
 </script>
 
@@ -584,7 +584,7 @@ ga('send', 'pageview');
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1626866700476')
+  navigator.serviceWorker.register('/sw.js?t=1627573895537')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
